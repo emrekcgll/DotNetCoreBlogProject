@@ -9,69 +9,73 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebUI
 build_property.RootNamespace = WebUI
-build_property.ProjectDir = C:\Users\Emre Koçoğlu\Desktop\DotNetCoreBlogProject\WebUI\
+build_property.ProjectDir = D:\github\DotNetCoreBlogProject\WebUI\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Emre Koçoğlu\Desktop\DotNetCoreBlogProject\WebUI
+build_property.MSBuildProjectDirectory = D:\github\DotNetCoreBlogProject\WebUI
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Default/Details.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Comment/AddComment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxBZGRDb21tZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Default/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Default/Index.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Default/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Login/Login.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Login/Register.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Login/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Shared/Components/CommentListComponent/Default.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Shared/Components/CommentListComponent/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29tbWVudExpc3RDb21wb25lbnRcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Shared/DefaultLayoutPartial/_FooterPartial.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Shared/DefaultLayoutPartial/_FooterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERlZmF1bHRMYXlvdXRQYXJ0aWFsXF9Gb290ZXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Shared/DefaultLayoutPartial/_HeaderPartial.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Shared/DefaultLayoutPartial/_HeaderPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERlZmF1bHRMYXlvdXRQYXJ0aWFsXF9IZWFkZXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Shared/DefaultLayoutPartial/_HeadPartial.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Shared/DefaultLayoutPartial/_HeadPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERlZmF1bHRMYXlvdXRQYXJ0aWFsXF9IZWFkUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Shared/DefaultLayoutPartial/_ScriptPartial.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Shared/DefaultLayoutPartial/_ScriptPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERlZmF1bHRMYXlvdXRQYXJ0aWFsXF9TY3JpcHRQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Shared/Error.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Shared/_DefaultLayout.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Shared/_DefaultLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EZWZhdWx0TGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/_ViewImports.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/_ViewStart.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre Koçoğlu/Desktop/DotNetCoreBlogProject/WebUI/Views/Shared/_Layout.cshtml]
+[D:/github/DotNetCoreBlogProject/WebUI/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mv07mvknwk

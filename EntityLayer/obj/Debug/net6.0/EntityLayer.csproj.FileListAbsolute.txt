@@ -12,3 +12,17 @@ C:\Users\Emre Koçoğlu\Desktop\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6
 C:\Users\Emre Koçoğlu\Desktop\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\EntityLayer.pdb
 C:\Users\Emre Koçoğlu\Desktop\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\EntityLayer.genruntimeconfig.cache
 C:\Users\Emre Koçoğlu\Desktop\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\ref\EntityLayer.dll
+D:\github\DotNetCoreBlogProject\EntityLayer\bin\Debug\net6.0\EntityLayer.deps.json
+D:\github\DotNetCoreBlogProject\EntityLayer\bin\Debug\net6.0\EntityLayer.runtimeconfig.json
+D:\github\DotNetCoreBlogProject\EntityLayer\bin\Debug\net6.0\EntityLayer.dll
+D:\github\DotNetCoreBlogProject\EntityLayer\bin\Debug\net6.0\EntityLayer.pdb
+D:\github\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\EntityLayer.csproj.AssemblyReference.cache
+D:\github\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\EntityLayer.AssemblyInfoInputs.cache
+D:\github\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\EntityLayer.AssemblyInfo.cs
+D:\github\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\EntityLayer.csproj.CoreCompileInputs.cache
+D:\github\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\EntityLayer.dll
+D:\github\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\refint\EntityLayer.dll
+D:\github\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\EntityLayer.pdb
+D:\github\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\EntityLayer.genruntimeconfig.cache
+D:\github\DotNetCoreBlogProject\EntityLayer\obj\Debug\net6.0\ref\EntityLayer.dll

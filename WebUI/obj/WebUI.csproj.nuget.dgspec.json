@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj": {}
+    "D:\\github\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj": {
+    "D:\\github\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "D:\\github\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\Emre Koçoğlu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\BusinessLayer\\obj\\",
+        "projectPath": "D:\\github\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\Admin11\\.nuget\\packages\\",
+        "outputPath": "D:\\github\\DotNetCoreBlogProject\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emre Koçoğlu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin11\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,18 +26,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj"
+              "D:\\github\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "D:\\github\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj"
+              "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -97,24 +96,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "D:\\github\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "D:\\github\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\Emre Koçoğlu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\DataAccessLayer\\obj\\",
+        "projectPath": "D:\\github\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\Admin11\\.nuget\\packages\\",
+        "outputPath": "D:\\github\\DotNetCoreBlogProject\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emre Koçoğlu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin11\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -123,15 +122,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj"
+              "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -191,24 +189,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
+    "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj",
-        "packagesPath": "C:\\Users\\Emre Koçoğlu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\obj\\",
+        "projectPath": "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj",
+        "packagesPath": "C:\\Users\\Admin11\\.nuget\\packages\\",
+        "outputPath": "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emre Koçoğlu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin11\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -217,7 +215,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -281,24 +278,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj": {
+    "D:\\github\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj",
+        "projectUniqueName": "D:\\github\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj",
         "projectName": "WebUI",
-        "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj",
-        "packagesPath": "C:\\Users\\Emre Koçoğlu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\WebUI\\obj\\",
+        "projectPath": "D:\\github\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj",
+        "packagesPath": "C:\\Users\\Admin11\\.nuget\\packages\\",
+        "outputPath": "D:\\github\\DotNetCoreBlogProject\\WebUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emre Koçoğlu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin11\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -307,21 +304,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj"
+              "D:\\github\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "D:\\github\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj"
+              "D:\\github\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "D:\\github\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj"
+              "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -388,7 +384,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

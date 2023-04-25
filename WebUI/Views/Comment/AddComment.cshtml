@@ -1,0 +1,17 @@
+﻿<h4>Leave a comment</h4>
+<form asp-action="AddComment" asp-controller="Comment" method="post">
+    <div class="form-group">
+        <input name="CommentUserName" class="form-control style_2" type="text" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+        <textarea name="CommentContent" class="form-control style_2" style="height:150px;" placeholder="Message"></textarea>
+    </div>
+    <div class="form-group">
+        <input class="form-control style_2" style="height:150px;" type="hidden" value="@ViewBag.Id" name="BlogID">
+        <input class="form-control style_2" style="height:150px;" type="hidden" value="@ViewBag.Id" name="id">
+    </div>
+    <div class="form-group">
+        <input type="reset" class="btn_1" value="Clear form" />
+        <input type="submit" class="btn_1" value="Post Comment" />
+    </div>
+</form>

@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Comment t)
         {
-            throw new NotImplementedException();
+            _commentDal.Insert(t);
         }
 
         public void TDelete(Comment t)
@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrete
 
         public List<Comment> TGetCommentListWithBlogID(int id)
         {
-            return _commentDal.GetListByFilter(x=>x.BlogID == id);
+            return _commentDal.GetListByFilter(x => x.BlogID == id);
         }
 
         public List<Comment> TGetList()

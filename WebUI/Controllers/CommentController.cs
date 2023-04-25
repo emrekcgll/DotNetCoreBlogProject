@@ -1,12 +1,18 @@
-﻿using EntityLayer.Entities;
+﻿using BusinessLayer.Abstract;
+using EntityLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Controllers
 {
+    [AllowAnonymous]
     public class CommentController : Controller
     {
-
-
+        private readonly ICommentService _commentService;
+        public CommentController(ICommentService commentService)
+        {
+            _commentService = commentService;
+        }
 
         [HttpGet]
         public PartialViewResult AddComment()
@@ -15,9 +21,13 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddComment(Comment p) 
+        public IActionResult AddComment(Comment p, int id)
         {
-            return RedirectToAction("Index", "Destination");
+            p.CommentDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            p.CommentStatus = true;
+            p.CommentImg = "deneme";
+            _commentService.TAdd(p);
+            return RedirectToAction("Details", "Default", new {id});
         }
     }
 }
