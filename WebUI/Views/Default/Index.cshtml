@@ -1,0 +1,119 @@
+﻿@using EntityLayer.Entities
+@model List<Blog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<section class="parallax_window_in short" data-parallax="scroll" data-image-src="~/htmlimg/subheader_in_1.jpg" data-natural-width="1400" data-natural-height="350">
+    <div id="sub_content_in">
+        <div class="container">
+            <h1>Our Blog</h1>
+            <p>"Usu habeo equidem sanctus no ex melius"</p>
+        </div>
+    </div>
+</section>
+<div class="container margin_60_35">
+    <div class="row">
+        <div class="col-lg-9 pe-lg-5">
+            @foreach (var item in Model)
+            {
+                <div class="post">
+                    <figure class="animated mb-0"><a href="/Default/Details/@item.BlogID" title="blog_post.html"><img src="@item.BlogImage" alt="" class="img-fluid"></a></figure>
+                    <div class="post_info clearfix">
+                        <div class="post-left">
+                            <ul>
+                                <li><i class="icon-calendar-empty"></i> On <span>@item.BlogCreatedDate</span></li>
+                                <li><i class="icon-inbox-alt"></i> In <a href="#">@item.Category.CategoryName</a></li>
+                            </ul>
+                        </div>
+                        <div class="post-right"><i class="icon-comment"></i>@item.Comments.Count()</div>
+                    </div>
+                    <h2>@item.BlogTitle</h2>
+                    <p>
+                        @item.BlogContent
+                    </p>
+                    <a href="/Default/Details/@item.BlogID" class="btn_1">Read more</a>
+                </div>
+            }
+            <hr>
+            <div class="text-center">
+                <nav aria-label="Pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#0" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#0">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#0">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#0">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#0" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="box_style_1">
+                <div class="widget">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search...">
+                    </div>
+                </div>
+                <hr>
+                <div class="widget">
+                    <h5>Categories</h5>
+                    <ul id="cat_nav">
+                        <li><a href="#">Security tips</a></li>
+                        <li><a href="#">Office wiring</a></li>
+                        <li><a href="#">Diagnosis</a></li>
+                        <li><a href="#">Maintance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="widget">
+                <h4>Recent post</h4>
+                <ul class="recent_post">
+                    <li>
+                        <i class="icon-calendar-empty"></i> 16th July, 2020
+                        <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
+                    </li>
+                    <li>
+                        <i class="icon-calendar-empty"></i> 16th July, 2020
+                        <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
+                    </li>
+                    <li>
+                        <i class="icon-calendar-empty"></i> 16th July, 2020
+                        <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="widget tags">
+                <h4>Tags</h4>
+                <a href="#">Lorem ipsum</a>
+                <a href="#">Dolor</a>
+                <a href="#">Long established</a>
+                <a href="#">Sit amet</a>
+                <a href="#">Latin words</a>
+                <a href="#">Excepteur sint</a>
+            </div>
+            <hr>
+            <div class="widget archives">
+                <h4>Archives</h4>
+                <ul class="list_2">
+                    <li><a href="#">May 2015</a></li>
+                    <li><a href="#">April 2015</a></li>
+                    <li><a href="#">March 2015</a></li>
+                    <li><a href="#">February 2015</a></li>
+                    <li><a href="#">January 2015</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

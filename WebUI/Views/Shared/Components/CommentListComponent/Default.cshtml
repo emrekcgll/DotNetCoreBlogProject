@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Entities
+@model List<Comment>
+
+<hr>
+<h4>@ViewBag.CommentCount comments</h4>
+
+<div id="comments">
+    <ol>
+        @foreach (var item in Model)
+        {
+            <li>
+                <div class="avatar"><a href="#"><img src="@item.CommentImg" alt=""></a></div>
+                <div class="comment_right clearfix">
+                    <div class="comment_info">
+                        Posted by <a href="#">@item.CommentUserName</a><span>|</span> @item.CommentDate
+                    </div>
+                    <p>
+                        @item.CommentContent
+                    </p>
+                </div>
+            </li>
+        }
+    </ol>
+</div>

@@ -1,0 +1,74 @@
+﻿@using WebUI.Models
+@model UserRegisterViewModel
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" ">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <title>Signin Template for Bootstrap</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card border-0 shadow rounded-3 my-5">
+                    <div class="card-body p-4 p-sm-5">
+                        <h5 class="card-title text-center mb-4 fs-5">Sign In</h5>
+                        <form method="post">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="Name">
+                                <label>Name</label>
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="Surname">
+                                <label>Surname</label>
+                                <span asp-validation-for="Surname" class="text-danger"></span>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="Email">
+                                <label>Email</label>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="UserName">
+                                <label>Username</label>
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" name="Password">
+                                <label>Password</label>
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" name="ConfirmPassword">
+                                <label>Password Confirm</label>
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign in</button>
+                            </div>
+                            <hr class="my-4">
+                            <div class="d-grid mb-2">
+                                <a href="/Login/Login" class="btn btn-google btn-login" type="submit">
+                                    Do you have account?<br /><strong>Login</strong>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

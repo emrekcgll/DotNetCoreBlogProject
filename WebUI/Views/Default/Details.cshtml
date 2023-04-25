@@ -1,0 +1,114 @@
+﻿@using EntityLayer.Entities
+@model List<Blog>
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+<br />
+<div class="container margin_60_35 mt-5">
+    <div class="row">
+        <div class="col-lg-9 pe-lg-5">
+            @foreach (var item in Model)
+            {
+            <div class="post nopadding">
+                <img src="@item.BlogImage" alt="" class="img-fluid border">
+                <div class="post_info clearfix">
+                    <div class="post-left">
+                        <ul>
+                            <li><i class="icon-calendar-empty"></i>On <span>@item.BlogCreatedDate</span></li>
+                            <li><i class="icon-inbox-alt"></i>In <a href="#">@item.Category.CategoryName</a></li>
+                        </ul>
+                    </div>
+                    <div class="post-right"><i class="icon-comment"></i><a href="#">@item.Comments.Count() </a>Comments</div>
+                </div>
+                <h2>@item.BlogTitle</h2>
+                <p>
+                    @item.BlogContent
+                </p>
+            </div>
+            }
+            @await Component.InvokeAsync("CommentListComponent", new {id=ViewBag.Id})
+
+
+            <h4>Leave a comment</h4>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <input class="form-control style_2" type="text" name="name" placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control style_2" type="text" name="mail" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" class="form-control style_2" style="height:150px;" placeholder="Message"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="reset" class="btn_1" value="Clear form" />
+                    <input type="submit" class="btn_1" value="Post Comment" />
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="box_style_1">
+                <div class="widget">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search...">
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="widget">
+                    <h5>Categories</h5>
+                    <ul id="cat_nav">
+                        <li><a href="#">Security tips</a></li>
+                        <li><a href="#">Office wiring</a></li>
+                        <li><a href="#">Diagnosis</a></li>
+                        <li><a href="#">Maintance</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="widget">
+                <h4>Recent post</h4>
+                <ul class="recent_post">
+                    <li>
+                        <i class="icon-calendar-empty"></i> 16th July, 2020
+                        <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
+                    </li>
+                    <li>
+                        <i class="icon-calendar-empty"></i> 16th July, 2020
+                        <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
+                    </li>
+                    <li>
+                        <i class="icon-calendar-empty"></i> 16th July, 2020
+                        <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="widget tags">
+                <h4>Tags</h4>
+                <a href="#">Lorem ipsum</a>
+                <a href="#">Dolor</a>
+                <a href="#">Long established</a>
+                <a href="#">Sit amet</a>
+                <a href="#">Latin words</a>
+                <a href="#">Excepteur sint</a>
+            </div>
+            <hr>
+            <div class="widget archives">
+                <h4>Archives</h4>
+                <ul class="list_2">
+                    <li><a href="#">May 2015</a></li>
+                    <li><a href="#">April 2015</a></li>
+                    <li><a href="#">March 2015</a></li>
+                    <li><a href="#">February 2015</a></li>
+                    <li><a href="#">January 2015</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
