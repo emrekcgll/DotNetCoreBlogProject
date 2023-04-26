@@ -1,0 +1,45 @@
+﻿@using EntityLayer.Entities
+@model Blog
+@{
+    ViewData["Title"] = "AddBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["ActivePage"] = "AddBlog";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card mb-12">
+                <h5 class="card-header">Default</h5>
+                <form method="post" class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Blog Title</label>
+                        <input type="text" class="form-control" asp-for="BlogTitle"/>
+                    </div>
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Category</label>
+                        <select class="form-control" name="CategoryID">
+                            @foreach (var item in @ViewBag.CategoryList)
+                            {
+                                <option value="@item.Value">@item.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Blog Content</label>
+                        <input type="text" class="form-control" asp-for="BlogContent" />
+                    </div>
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Blog Image</label>
+                        <input type="text" class="form-control" asp-for="BlogImage" />
+                    </div>
+                    <div class="mt-2">
+                        <button class="btn btn-primary" type="submit">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrete
 
         public List<Category> TGetList()
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetList();
         }
 
         public void TUpdate(Category t)

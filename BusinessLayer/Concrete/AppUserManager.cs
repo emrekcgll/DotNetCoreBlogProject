@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrete
 
         public List<AppUser> TGetList()
         {
-            throw new NotImplementedException();
+            return _appUserDal.GetList();
         }
 
         public void TUpdate(AppUser t)

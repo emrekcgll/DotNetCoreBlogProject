@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Entities
+@model List<Blog>
+@{
+    ViewData["Title"] = "UpdateBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-12">
+                <div class="card mb-12">
+                    <h5 class="card-header">Default</h5>
+                    <div class="card-body">
+                        <div>
+                            <input type="hidden" name="" class="form-control" value="@item.BlogID" />
+                        </div>
+                        <div>
+                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
+                            <input type="text" class="form-control" value="@item.BlogTitle" />
+                        </div>
+                        <div>
+                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
+                            <input type="text" class="form-control" value="@item.BlogTitle" />
+                        </div>
+                        <div>
+                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
+                            <input type="text" class="form-control" value="@item.BlogTitle" />
+                        </div>
+                        <div>
+                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
+                            <input type="text" class="form-control" value="@item.BlogTitle" />
+                        </div>
+                        <div>
+                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
+                            <input type="text" class="form-control" value="@item.BlogTitle" />
+                        </div>
+                        <div>
+                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
+                            <input type="text" class="form-control" value="@item.BlogTitle" />
+                        </div>
+                        <div>
+                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
+                            <input type="text" class="form-control" value="@item.BlogTitle" />
+                        </div>
+                        <div>
+                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
+                            <input type="text" class="form-control" value="@item.BlogTitle" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
