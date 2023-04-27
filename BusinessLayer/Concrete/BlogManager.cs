@@ -17,6 +17,11 @@ namespace BusinessLayer.Concrete
             _blogDal = blogDal;
         }
 
+        public List<Blog> TGetBlogListWithCategoryByPendingApproval()
+        {
+            return _blogDal.GetBlogListWithCategoryByPendingApproval();
+        }
+
         public void TAdd(Blog t)
         {
             _blogDal.Insert(t);
@@ -49,7 +54,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Blog t)
         {
-            throw new NotImplementedException();
+            _blogDal.Update(t);
         }
     }
 }

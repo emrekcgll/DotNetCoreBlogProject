@@ -116,6 +116,13 @@
                             <div data-i18n="Basic">Blog Listesi</div>
                         </a>
                     </li>
+                    <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "OnayBekleyenBloglar") {<text>active</text>}">
+                        <a href="/Admin/Dashboard/PendingApprovalBlogList/" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-collection"></i>
+                            <div data-i18n="Basic">Bekleyen Bloglar</div>
+                            <span id="pending-blog-count" class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20"></span>
+                        </a>
+                    </li>
                      <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "AddBlog") {<text>active</text>}">
                         <a href="/Admin/Dashboard/AddBlog/" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-collection"></i>
@@ -260,10 +267,28 @@
         <!-- Overlay -->
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
+
     <!-- / Layout wrapper -->
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="~/sneat-1.0.0/assets/vendor/libs/jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Admin/Dashboard/GetPendingBlogCount/",
+                success: function (result) {
+                    if(result!==0) {
+                        $("#pending-blog-count").text(result);
+                        $("#pending-blog-count").show();
+                    }
+                },
+                error: function () {
+                    $("#pending-blog-count").text("Hata oluştu!");
+                }
+            });
+        });
+    </script>
     <script src="~/sneat-1.0.0/assets/vendor/libs/popper/popper.js"></script>
     <script src="~/sneat-1.0.0/assets/vendor/js/bootstrap.js"></script>
     <script src="~/sneat-1.0.0/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
@@ -281,5 +306,6 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    
 </body>
 </html>

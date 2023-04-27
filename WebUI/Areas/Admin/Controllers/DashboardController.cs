@@ -1,5 +1,4 @@
 ﻿using BusinessLayer.Abstract;
-using DataAccessLayer.Abstract;
 using EntityLayer.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,7 +12,7 @@ namespace WebUI.Areas.Admin.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IBlogService _blogService;
         private readonly IAppUserService _appUserService;
-        private readonly ICategoryService  _categoryService;
+        private readonly ICategoryService _categoryService;
 
         public DashboardController(UserManager<AppUser> userManager, IBlogService blogService, IAppUserService appUserService, ICategoryService categoryService)
         {
@@ -27,11 +26,12 @@ namespace WebUI.Areas.Admin.Controllers
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             var blogList = _blogService.TGetBlogListWithCategory();
-            var userList = _appUserService.TGetList();
-            ViewBag.UserCount = userList.Count();
+            var allBlogList = _blogService.TGetList();
+            var pendingBlogList = _blogService.TGetBlogListWithCategoryByPendingApproval();
+            ViewBag.AllBlogCount = allBlogList.Count();
             ViewBag.BlogCount = blogList.Count();
             ViewBag.Name = values.Name + " " + values.Surname;
-            return View(blogList);
+            return View(pendingBlogList);
         }
 
         [HttpGet]
@@ -41,25 +41,24 @@ namespace WebUI.Areas.Admin.Controllers
             return View(values);
         }
 
+
+
         [HttpGet]
-        public IActionResult UpdateBlog(int id)
+        public IActionResult PendingApprovalBlogList()
         {
-            var values = _blogService.TGetBlogByIdWithCategory(id);
+            var values = _blogService.TGetBlogListWithCategoryByPendingApproval();
+            if (values.Count() == 0)
+            {
+                ViewBag.Message = "Onay bekleyen blog bulunamadı..";
+            }
             return View(values);
         }
 
-        [HttpPost]
-        public IActionResult UpdateBlog(Blog p)
+        [HttpGet]
+        public JsonResult GetPendingBlogCount()
         {
-            _blogService.TUpdate(p);
-            return RedirectToAction("BlogList", "Dashboard", new { area = "Admin" });
-        }
-
-        public IActionResult DeleteBlog(int id)
-        {
-            var values = _blogService.TGetById(id);
-            _blogService.TDelete(values);
-            return RedirectToAction("BlogList", "Dashboard", new { area = "Admin" });
+            var count = _blogService.TGetBlogListWithCategoryByPendingApproval().Count();
+            return Json(count);
         }
 
         [HttpGet]
@@ -82,12 +81,40 @@ namespace WebUI.Areas.Admin.Controllers
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
 
             p.BlogCreatedDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            p.BlogStatus = true;
+            p.BlogStatus = false;
             p.AppUserId = values.Id;
 
             _blogService.TAdd(p);
             return RedirectToAction("BlogList", "Dashboard", new { area = "Admin" });
         }
 
+        [HttpGet]
+        public IActionResult UpdateBlog(int id)
+        {
+            var cat = _categoryService.TGetList();
+            var catList = cat.Select(x => new SelectListItem
+            {
+                Value = x.CategoryID.ToString(),
+                Text = x.CategoryName
+            });
+            ViewBag.CategoryList = catList;
+
+            var values = _blogService.TGetBlogByIdWithCategory(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateBlog(Blog p)
+        {
+            _blogService.TUpdate(p);
+            return RedirectToAction("BlogList", "Dashboard", new { area = "Admin" });
+        }
+
+        public IActionResult DeleteBlog(int id)
+        {
+            var values = _blogService.TGetById(id);
+            _blogService.TDelete(values);
+            return RedirectToAction("BlogList", "Dashboard", new { area = "Admin" });
+        }
     }
 }

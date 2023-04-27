@@ -17,7 +17,7 @@ namespace DataAccessLayer.EntityFramework
         {
             using (var c = new Context())
             {
-                return c.Blogs.Include(x => x.Category).Include(y=>y.Comments).Where(x => x.BlogID == id).ToList();
+                return c.Blogs.Include(x => x.Category).Include(y => y.Comments).Where(x => x.BlogID == id).ToList();
             }
         }
 
@@ -25,7 +25,15 @@ namespace DataAccessLayer.EntityFramework
         {
             using (var c = new Context())
             {
-                return c.Blogs.Include(x => x.Category).Include(y=>y.Comments).ToList();
+                return c.Blogs.Include(x => x.Category).Include(y => y.Comments).Where(z => z.BlogStatus == true).ToList();
+            }
+        }
+
+        public List<Blog> GetBlogListWithCategoryByPendingApproval()
+        {
+            using (var c = new Context())
+            {
+                return c.Blogs.Include(x => x.Category).Include(y => y.Comments).Where(z => z.BlogStatus == false).ToList();
             }
         }
     }

@@ -13,41 +13,41 @@
                 <div class="card mb-12">
                     <h5 class="card-header">Default</h5>
                     <div class="card-body">
-                        <div>
-                            <input type="hidden" name="" class="form-control" value="@item.BlogID" />
-                        </div>
-                        <div>
-                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
-                            <input type="text" class="form-control" value="@item.BlogTitle" />
-                        </div>
-                        <div>
-                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
-                            <input type="text" class="form-control" value="@item.BlogTitle" />
-                        </div>
-                        <div>
-                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
-                            <input type="text" class="form-control" value="@item.BlogTitle" />
-                        </div>
-                        <div>
-                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
-                            <input type="text" class="form-control" value="@item.BlogTitle" />
-                        </div>
-                        <div>
-                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
-                            <input type="text" class="form-control" value="@item.BlogTitle" />
-                        </div>
-                        <div>
-                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
-                            <input type="text" class="form-control" value="@item.BlogTitle" />
-                        </div>
-                        <div>
-                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
-                            <input type="text" class="form-control" value="@item.BlogTitle" />
-                        </div>
-                        <div>
-                            <label for="defaultFormControlInput" class="form-label">Blog Title</label>
-                            <input type="text" class="form-control" value="@item.BlogTitle" />
-                        </div>
+                        <form method="post">
+                            <div>
+                                <input type="hidden" name="BlogID" value="@item.BlogID" />
+                                <input type="hidden" name="BlogCreatedDate" value="@item.BlogCreatedDate">
+                                <input type="hidden" name="AppUserId" value="@item.AppUserId">
+                                <input type="hidden" name="BlogImage" value="@item.BlogImage">
+                            </div>
+                            <div>
+                                <label for="defaultFormControlInput" class="form-label">Blog Title</label>
+                                <input type="text" class="form-control" name="BlogTitle" value="@item.BlogTitle" />
+                            </div>
+                            <div>
+                                <label for="defaultFormControlInput" class="form-label">Blog Category</label>
+                                <select class="form-control" name="CategoryID">
+                                    @foreach (var x in @ViewBag.CategoryList)
+                                    {
+                                        <option value="@x.Value" @(item.Category.CategoryName == x.Text ? "selected" : "")>@x.Text</option>
+                                    }
+                                </select>
+                            </div>
+                            <div>
+                                <label for="defaultFormControlInput" class="form-label">Blog Content</label>
+                                <input type="text" class="form-control" name="BlogContent" value="@item.BlogContent" />
+                            </div>
+                            <div>
+                                <label for="defaultFormControlInput" class="form-label">Blog Status</label>
+                                <select class="form-control" name="BlogStatus">
+                                    <option value="true" @(item.BlogStatus == true ? "selected" : "")>Yayında</option>
+                                    <option value="false" @(item.BlogStatus == false ? "selected" : "")>Onay Bekliyor</option>
+                                </select>
+                            </div>
+                            <div class="mt-2">
+                                <button class="btn btn-primary" type="submit">Güncelle</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
