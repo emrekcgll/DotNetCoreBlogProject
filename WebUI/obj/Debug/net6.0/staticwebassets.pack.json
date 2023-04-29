@@ -2997,6 +2997,10 @@
       "PackagePath": "staticwebassets\\html\\video\\intro.ogv"
     },
     {
+      "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\4cca17b0-9106-4fd3-8abe-8bd17f4977fe_1.jpg",
+      "PackagePath": "staticwebassets\\images\\4cca17b0-9106-4fd3-8abe-8bd17f4977fe_1.jpg"
+    },
+    {
       "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

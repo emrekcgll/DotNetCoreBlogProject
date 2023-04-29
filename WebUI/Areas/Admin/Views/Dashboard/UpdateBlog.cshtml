@@ -9,9 +9,9 @@
     <div class="row">
         @foreach (var item in Model)
         {
-            <div class="col-md-12">
+            <div class="col-md-9">
                 <div class="card mb-12">
-                    <h5 class="card-header">Default</h5>
+                    <h5 class="card-header">Update Blog</h5>
                     <div class="card-body">
                         <form method="post">
                             <div>
@@ -49,6 +49,11 @@
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-12">
+                    <img src="~/images/@item.BlogImage" style="max-width:400px;">
                 </div>
             </div>
         }

@@ -20,7 +20,7 @@
             @foreach (var item in Model)
             {
                 <div class="post">
-                    <figure class="animated mb-0"><a href="/Default/Details/@item.BlogID" title="blog_post.html"><img src="@item.BlogImage" alt="" class="img-fluid"></a></figure>
+                    <figure class="animated mb-0"><a href="/Default/Details/@item.BlogID"><img src="~/images/@item.BlogImage" alt="" class="img-fluid"></a></figure>
                     <div class="post_info clearfix">
                         <div class="post-left">
                             <ul>

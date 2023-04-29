@@ -8,14 +8,13 @@
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
-
-        <div class="col-md-12">
+        <div class="col-md-9">
             <div class="card mb-12">
-                <h5 class="card-header">Default</h5>
-                <form method="post" class="card-body">
+                <h5 class="card-header">New Blog</h5>
+                <form method="post" enctype="multipart/form-data" class="card-body">
                     <div>
                         <label for="defaultFormControlInput" class="form-label">Blog Title</label>
-                        <input type="text" class="form-control" asp-for="BlogTitle"/>
+                        <input type="text" class="form-control" name="BlogTitle" />
                     </div>
                     <div>
                         <label for="defaultFormControlInput" class="form-label">Category</label>
@@ -28,11 +27,11 @@
                     </div>
                     <div>
                         <label for="defaultFormControlInput" class="form-label">Blog Content</label>
-                        <input type="text" class="form-control" asp-for="BlogContent" />
+                        <textarea type="text" class="form-control" name="BlogContent"> </textarea>
                     </div>
                     <div>
                         <label for="defaultFormControlInput" class="form-label">Blog Image</label>
-                        <input type="text" class="form-control" asp-for="BlogImage" />
+                        <input type="file" class="form-control" id="imageInput" name="BlogImage" />
                     </div>
                     <div class="mt-2">
                         <button class="btn btn-primary" type="submit">Kaydet</button>
@@ -40,6 +39,22 @@
                 </form>
             </div>
         </div>
-
+        <div class="col-md-3">
+            <div class="card mb-12">
+                <img id="imagePreview" style="max-width:400px;">
+            </div>
+        </div>
     </div>
 </div>
+<script>
+    var input = document.getElementById('imageInput');
+    var preview = document.getElementById('imagePreview');
+    input.addEventListener('change', function () {
+        var file = input.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+</script>

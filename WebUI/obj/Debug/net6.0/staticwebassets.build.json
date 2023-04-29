@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fTuo5h74v7U8eQdLBx8apxcE9zWYNrTCfrF+Ebb8560=",
+  "Hash": "MtbMAH5HbeiQerokqUXKN+5K1YLU24fqTMOFT72peFw=",
   "Source": "WebUI",
   "BasePath": "_content/WebUI",
   "Mode": "Default",
@@ -12765,6 +12765,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\html\\video\\intro.ogv"
+    },
+    {
+      "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\4cca17b0-9106-4fd3-8abe-8bd17f4977fe_1.jpg",
+      "SourceId": "WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUI",
+      "RelativePath": "images/4cca17b0-9106-4fd3-8abe-8bd17f4977fe_1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\4cca17b0-9106-4fd3-8abe-8bd17f4977fe_1.jpg"
     },
     {
       "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\js\\site.js",

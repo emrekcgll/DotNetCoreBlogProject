@@ -3,6 +3,7 @@ using EntityLayer.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Reflection.Metadata;
 
 namespace WebUI.Areas.Admin.Controllers
 {
@@ -40,8 +41,6 @@ namespace WebUI.Areas.Admin.Controllers
             var values = _blogService.TGetBlogListWithCategory();
             return View(values);
         }
-
-
 
         [HttpGet]
         public IActionResult PendingApprovalBlogList()
@@ -83,7 +82,22 @@ namespace WebUI.Areas.Admin.Controllers
             p.BlogCreatedDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             p.BlogStatus = false;
             p.AppUserId = values.Id;
-
+            // BlogImage'i kaydetmek için dosyayı alın
+            var file = HttpContext.Request.Form.Files.GetFile("BlogImage");
+            // Dosya adı oluşturun
+            var fileName = Path.GetFileName(file.FileName);
+            // Dosya adı benzersiz olsun diye, GUID kullanarak bir dosya adı oluşturun
+            var uniqueFileName = Guid.NewGuid().ToString() + "_" + fileName;
+            // Dosyayı kaydetmek için hedef klasörü belirleyin
+            var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+            // Dosyayı kaydedin
+            var filePath = Path.Combine(uploadFolder, uniqueFileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                file.CopyTo(stream);
+            }
+            // BlogImage'in dosya adını Blog nesnesine atayın
+            p.BlogImage = uniqueFileName;
             _blogService.TAdd(p);
             return RedirectToAction("BlogList", "Dashboard", new { area = "Admin" });
         }
@@ -113,6 +127,13 @@ namespace WebUI.Areas.Admin.Controllers
         public IActionResult DeleteBlog(int id)
         {
             var values = _blogService.TGetById(id);
+
+            var imagePath = "wwwroot/images/" + values.BlogImage;
+            if (System.IO.File.Exists(imagePath))
+            {
+                System.IO.File.Delete(imagePath);
+            }
+
             _blogService.TDelete(values);
             return RedirectToAction("BlogList", "Dashboard", new { area = "Admin" });
         }
