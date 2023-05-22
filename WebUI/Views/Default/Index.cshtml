@@ -67,13 +67,7 @@
                 </div>
                 <hr>
                 <div class="widget">
-                    <h5>Categories</h5>
-                    <ul id="cat_nav">
-                        <li><a href="#">Security tips</a></li>
-                        <li><a href="#">Office wiring</a></li>
-                        <li><a href="#">Diagnosis</a></li>
-                        <li><a href="#">Maintance</a></li>
-                    </ul>
+                    @await Component.InvokeAsync("CategoryListComponent")
                 </div>
             </div>
             <div class="widget">
@@ -91,27 +85,6 @@
                         <i class="icon-calendar-empty"></i> 16th July, 2020
                         <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
                     </li>
-                </ul>
-            </div>
-            <hr>
-            <div class="widget tags">
-                <h4>Tags</h4>
-                <a href="#">Lorem ipsum</a>
-                <a href="#">Dolor</a>
-                <a href="#">Long established</a>
-                <a href="#">Sit amet</a>
-                <a href="#">Latin words</a>
-                <a href="#">Excepteur sint</a>
-            </div>
-            <hr>
-            <div class="widget archives">
-                <h4>Archives</h4>
-                <ul class="list_2">
-                    <li><a href="#">May 2015</a></li>
-                    <li><a href="#">April 2015</a></li>
-                    <li><a href="#">March 2015</a></li>
-                    <li><a href="#">February 2015</a></li>
-                    <li><a href="#">January 2015</a></li>
                 </ul>
             </div>
         </div>

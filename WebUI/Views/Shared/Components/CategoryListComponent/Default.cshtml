@@ -1,0 +1,10 @@
+﻿@using EntityLayer.Entities
+@model List<Category>
+
+<h5>Categories</h5>
+<ul id="cat_nav">
+    @foreach (var item in Model)
+    {
+        <li><a href="#">@item.CategoryName</a></li>
+    }
+</ul>
