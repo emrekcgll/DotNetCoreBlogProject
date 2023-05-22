@@ -5,17 +5,17 @@
     Layout = "~/Views/Shared/_DefaultLayout.cshtml";
 }
 <br />
-<div class="container margin_60_35 mt-5">
-    <div class="row">
-        <div class="col-lg-9 pe-lg-5">
-            @foreach (var item in Model)
-            {
+@foreach (var item in Model)
+{
+    <div class="container margin_60_35 mt-5">
+        <div class="row">
+            <div class="col-lg-9 pe-lg-5">
                 <div class="post nopadding">
                     <img src="~/images/@item.BlogImage" alt="" class="img-fluid border">
                     <div class="post_info clearfix">
                         <div class="post-left">
                             <ul>
-                                <li><i class="icon-calendar-empty"></i>On <span>@item.BlogCreatedDate</span></li>
+                                <li><i class="icon-calendar-empty"></i>On <span>@item.BlogCreatedDate.ToString("dd MMM yyyy")</span></li>
                                 <li><i class="icon-inbox-alt"></i>In <a href="#">@item.Category.CategoryName</a></li>
                             </ul>
                         </div>
@@ -26,36 +26,16 @@
                         @item.BlogContent
                     </p>
                 </div>
-            }
-            @await Component.InvokeAsync("CommentListComponent", new {id=ViewBag.Id})
+                @await Component.InvokeAsync("CommentListComponent", new {id=ViewBag.Id})
 
-            @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml")
-        </div>
-        <div class="col-lg-3">
-            <div class="box_style_1">
-                <div class="widget">
-                    @await Component.InvokeAsync("CategoryListComponent")
-                </div>
+                @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml")
             </div>
+            <div class="col-lg-3">
+                @await Component.InvokeAsync("CategoryListComponent")
 
-            <div class="widget">
-                <h4>Recent post</h4>
-                <ul class="recent_post">
-                    <li>
-                        <i class="icon-calendar-empty"></i> 16th July, 2020
-                        <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
-                    </li>
-                    <li>
-                        <i class="icon-calendar-empty"></i> 16th July, 2020
-                        <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
-                    </li>
-                    <li>
-                        <i class="icon-calendar-empty"></i> 16th July, 2020
-                        <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
-                    </li>
-                </ul>
+                @await Component.InvokeAsync("WriterLastBlogListComponent", new {id=item.AppUserId})
+                <hr>
             </div>
-            <hr>
         </div>
     </div>
-</div>
+}

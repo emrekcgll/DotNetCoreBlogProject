@@ -62,6 +62,7 @@ namespace WebUI.Controllers
                 var result = await _userManager.CreateAsync(appUser, p.Password);
                 if (result.Succeeded)
                 {
+                    var roleResult = await _userManager.AddToRoleAsync(appUser, "Member"); //add role
                     return RedirectToAction("Login");
                 }
                 else

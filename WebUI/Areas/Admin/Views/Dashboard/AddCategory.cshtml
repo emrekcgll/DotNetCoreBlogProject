@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Entities.Category
+
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["ActivePage"] = "NewCategory";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-12">
+                <h5 class="card-header">Yeni Kategori</h5>
+                <form method="post" enctype="multipart/form-data" class="card-body">
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Kategori Adı</label>
+                        <input type="text" class="form-control" name="CategoryName" />
+                    </div>
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Kategori Açıklaması</label>
+                        <textarea type="text" class="form-control" name="CategoryDescription"> </textarea>
+                    </div>
+                    <div class="mt-2">
+                        <button class="btn btn-primary" type="submit">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

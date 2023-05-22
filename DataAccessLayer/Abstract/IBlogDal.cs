@@ -12,5 +12,7 @@ namespace DataAccessLayer.Abstract
         List<Blog> GetBlogListWithCategory();
         List<Blog> GetBlogByIdWithCategory(int id);
         List<Blog> GetBlogListWithCategoryByPendingApproval();
+        List<Blog> GetLastBlogListWithWriter(int id);
+        List<Blog> GetLastThreeBlog();
     }
 }

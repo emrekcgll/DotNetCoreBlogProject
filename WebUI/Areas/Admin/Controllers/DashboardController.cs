@@ -1,9 +1,9 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Reflection.Metadata;
 
 namespace WebUI.Areas.Admin.Controllers
 {
@@ -32,6 +32,7 @@ namespace WebUI.Areas.Admin.Controllers
             ViewBag.AllBlogCount = allBlogList.Count();
             ViewBag.BlogCount = blogList.Count();
             ViewBag.Name = values.Name + " " + values.Surname;
+            ViewBag.Role = await _userManager.GetRolesAsync(values);
             return View(pendingBlogList);
         }
 
@@ -43,6 +44,7 @@ namespace WebUI.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult PendingApprovalBlogList()
         {
             var values = _blogService.TGetBlogListWithCategoryByPendingApproval();
@@ -54,6 +56,7 @@ namespace WebUI.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public JsonResult GetPendingBlogCount()
         {
             var count = _blogService.TGetBlogListWithCategoryByPendingApproval().Count();
@@ -103,6 +106,7 @@ namespace WebUI.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult UpdateBlog(int id)
         {
             var cat = _categoryService.TGetList();
@@ -118,12 +122,14 @@ namespace WebUI.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IActionResult UpdateBlog(Blog p)
         {
             _blogService.TUpdate(p);
             return RedirectToAction("BlogList", "Dashboard", new { area = "Admin" });
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult DeleteBlog(int id)
         {
             var values = _blogService.TGetById(id);
@@ -136,6 +142,30 @@ namespace WebUI.Areas.Admin.Controllers
 
             _blogService.TDelete(values);
             return RedirectToAction("BlogList", "Dashboard", new { area = "Admin" });
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public IActionResult AddCategory()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public IActionResult AddCategory(Category p)
+        {
+            p.CategoryStatus = true;
+            _categoryService.TAdd(p);
+            return View();
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public IActionResult CategoryList()
+        {
+            var values = _categoryService.TGetList();
+            return View(values);
         }
     }
 }

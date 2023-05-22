@@ -1922,6 +1922,19 @@
           }
         }
       },
+      "PagedList/1.17.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/PagedList.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/PagedList.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -6231,6 +6244,19 @@
         "nuget.versioning.nuspec"
       ]
     },
+    "PagedList/1.17.0": {
+      "sha512": "Ou6F3WKXh49hOo0TxWM+SkIGuKllYPuPPvnSYOlQ1sTrtuEyuDUhYbSJd5Sdb06i/sWUJZTjiUecEs3Ht/Hx3g==",
+      "type": "package",
+      "path": "pagedlist/1.17.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/PagedList.dll",
+        "lib/net40/PagedList.xml",
+        "pagedlist.1.17.0.nupkg.sha512",
+        "pagedlist.nuspec"
+      ]
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "sha512": "HdSSp5MnJSsg08KMfZThpuLPJpPwE5hBXvHwoKWosyHHfe8Mh5WKT0ylEOf6yNzX6Ngjxe4Whkafh5q7Ymac4Q==",
       "type": "package",
@@ -10296,27 +10322,28 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.15",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.15",
       "Microsoft.Extensions.Identity.Core >= 6.0.15",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.13"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.13",
+      "PagedList >= 1.17.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emre Koçoğlu\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin11\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj",
+      "projectUniqueName": "D:\\github\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj",
       "projectName": "WebUI",
-      "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj",
-      "packagesPath": "C:\\Users\\Emre Koçoğlu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\WebUI\\obj\\",
+      "projectPath": "D:\\github\\DotNetCoreBlogProject\\WebUI\\WebUI.csproj",
+      "packagesPath": "C:\\Users\\Admin11\\.nuget\\packages\\",
+      "outputPath": "D:\\github\\DotNetCoreBlogProject\\WebUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Emre Koçoğlu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin11\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10325,21 +10352,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj"
+            "D:\\github\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "D:\\github\\DotNetCoreBlogProject\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj"
+            "D:\\github\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "D:\\github\\DotNetCoreBlogProject\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
-              "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj"
+            "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
+              "projectPath": "D:\\github\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj"
             }
           }
         }
@@ -10385,6 +10411,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[6.0.13, )"
+          },
+          "PagedList": {
+            "target": "Package",
+            "version": "[1.17.0, )"
           }
         },
         "imports": [
@@ -10406,8 +10436,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PagedList 1.17.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "PagedList",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
