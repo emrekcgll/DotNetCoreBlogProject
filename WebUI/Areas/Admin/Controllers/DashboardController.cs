@@ -4,9 +4,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.DotNet.MSIdentity.Shared;
-using System.Text.Json.Serialization;
-using System.Text.Json;
 
 namespace WebUI.Areas.Admin.Controllers
 {
@@ -17,13 +14,14 @@ namespace WebUI.Areas.Admin.Controllers
         private readonly IBlogService _blogService;
         private readonly IAppUserService _appUserService;
         private readonly ICategoryService _categoryService;
-
-        public DashboardController(UserManager<AppUser> userManager, IBlogService blogService, IAppUserService appUserService, ICategoryService categoryService)
+        private readonly ICommentService _commentService;
+        public DashboardController(UserManager<AppUser> userManager, IBlogService blogService, IAppUserService appUserService, ICategoryService categoryService, ICommentService commentService = null)
         {
             _userManager = userManager;
             _blogService = blogService;
             _appUserService = appUserService;
             _categoryService = categoryService;
+            _commentService = commentService;
         }
 
         public async Task<IActionResult> Index()
@@ -39,6 +37,11 @@ namespace WebUI.Areas.Admin.Controllers
             int notTodaysBlogCount = notTodaysBlog.Count();
             double oran = (double)todaysBlogCount / notTodaysBlogCount * 100;
             ViewBag.Oran = oran;
+
+            var todaysComment = _commentService.TGetCommentListToday().Count();
+            var notTodaysComment = _commentService.TGetCommentListNotToday().Count();
+            double commentOran = (double)todaysComment / notTodaysComment * 100;
+            ViewBag.CommentOran = (int)commentOran;
 
             ViewBag.PendingBlogCount = pendingBlogList.Count();
             ViewBag.AllBlogCount = allBlogList.Count();

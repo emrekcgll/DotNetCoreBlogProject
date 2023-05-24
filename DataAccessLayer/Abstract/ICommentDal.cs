@@ -10,5 +10,8 @@ namespace DataAccessLayer.Abstract
     public interface ICommentDal : IGenericDal<Comment>
     {
         List<Comment> GetCommentListWithBlog();
+
+        List<Comment> GetCommentListToday();
+        List<Comment> GetCommentListNotToday();
     }
 }

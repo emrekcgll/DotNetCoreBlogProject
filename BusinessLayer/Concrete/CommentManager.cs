@@ -33,6 +33,16 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public List<Comment> TGetCommentListNotToday()
+        {
+            return _commentDal.GetCommentListNotToday();
+        }
+
+        public List<Comment> TGetCommentListToday()
+        {
+            return _commentDal.GetCommentListToday();
+        }
+
         public List<Comment> TGetCommentListWithBlogID(int id)
         {
             return _commentDal.GetListByFilter(x => x.BlogID == id);

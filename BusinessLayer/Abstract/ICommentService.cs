@@ -10,5 +10,8 @@ namespace BusinessLayer.Abstract
     public interface ICommentService : IGenericService<Comment>
     {
         List<Comment> TGetCommentListWithBlogID(int id);
+
+        List<Comment> TGetCommentListToday();
+        List<Comment> TGetCommentListNotToday();
     }
 }
