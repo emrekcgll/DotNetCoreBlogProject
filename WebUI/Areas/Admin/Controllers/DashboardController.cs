@@ -29,6 +29,7 @@ namespace WebUI.Areas.Admin.Controllers
             var blogList = _blogService.TGetBlogListWithCategory();
             var allBlogList = _blogService.TGetList();
             var pendingBlogList = _blogService.TGetBlogListWithCategoryByPendingApproval();
+            ViewBag.PendingBlogCount = pendingBlogList.Count();
             ViewBag.AllBlogCount = allBlogList.Count();
             ViewBag.BlogCount = blogList.Count();
             ViewBag.Name = values.Name + " " + values.Surname;
@@ -40,6 +41,8 @@ namespace WebUI.Areas.Admin.Controllers
         public IActionResult BlogList()
         {
             var values = _blogService.TGetBlogListWithCategory();
+            if (values.Count() == 0)
+                ViewBag.Message = "Henüz hiç blog yayınlanmamış...";
             return View(values);
         }
 
@@ -49,9 +52,7 @@ namespace WebUI.Areas.Admin.Controllers
         {
             var values = _blogService.TGetBlogListWithCategoryByPendingApproval();
             if (values.Count() == 0)
-            {
                 ViewBag.Message = "Onay bekleyen blog bulunamadı..";
-            }
             return View(values);
         }
 
@@ -165,7 +166,33 @@ namespace WebUI.Areas.Admin.Controllers
         public IActionResult CategoryList()
         {
             var values = _categoryService.TGetList();
+            if (values.Count() == 0)
+                ViewBag.Message = "Henüz hiç kategori oluşturulmamış...";
             return View(values);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult DeleteCategory(int id)
+        {
+            var values = _categoryService.TGetById(id);
+            _categoryService.TDelete(values);
+            return RedirectToAction("CategoryList", "Dashboard", new { area = "Admin" });
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public IActionResult UpdateCategory(int id)
+        {
+            var values = _categoryService.TGetById(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public IActionResult UpdateCategory(Category p)
+        {
+            _categoryService.TUpdate(p);
+            return RedirectToAction("CategoryList", "Dashboard", new { area = "Admin" });
         }
     }
 }

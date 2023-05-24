@@ -4,44 +4,58 @@
     ViewData["Title"] = "CategoryList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     ViewData["ActivePage"] = "CategoryList";
+    var count = 0;
 }
 
-
-<div class="container-xxl flex-grow-1 container-p-y">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    #
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CategoryName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CategoryStatus)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+@if (ViewBag.Message != null)
+{
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <div class="row">
+            <h3 class="text-success">
+                @ViewBag.Message
+            </h3>
+        </div>
+    </div>
+}
+else
+{
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CategoryID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CategoryName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CategoryStatus)
-                    </td>
-                    <td>
-                        <a href="" class="btn btn-outline-danger">Sil</a>
-                        <a href="" class="btn btn-outline-info">Düzenle</a>
-                    </td>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CategoryName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CategoryStatus)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => count)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryStatus)
+                        </td>
+                        <td>
+                            <a href="/Admin/Dashboard/DeleteCategory/@item.CategoryID/" class="btn btn-outline-danger">Sil</a>
+                            <a href="/Admin/Dashboard/UpdateCategory/@item.CategoryID/" class="btn btn-outline-info">Düzenle</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

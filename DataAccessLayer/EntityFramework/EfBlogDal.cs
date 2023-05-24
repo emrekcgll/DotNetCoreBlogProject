@@ -26,7 +26,7 @@ namespace DataAccessLayer.EntityFramework
         {
             using (var c = new Context())
             {
-                return c.Blogs.Include(x => x.Category).Include(y => y.Comments).Where(z => z.BlogStatus == true).ToList();
+                return c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(x => x.BlogStatus == true).ToList();
             }
         }
 

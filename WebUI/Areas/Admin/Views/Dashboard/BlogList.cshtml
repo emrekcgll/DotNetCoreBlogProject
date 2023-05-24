@@ -6,32 +6,41 @@
     ViewData["ActivePage"] = "BlogList";
     var count = 0;
 }
-<div class="container-xxl flex-grow-1 container-p-y">
-    <table class="table">
-        <tr>
-            <th>#</th>
-            <th>Blog Adı</th>
-            <th>Kategori</th>
-            @if (User.IsInRole("Admin"))
-            {
-                <th></th>
-            }
-        </tr>
-        @foreach (var item in Model)
-        {
-            count++;
-            <tr>
-                <td>@count</td>
-                <td>@item.BlogTitle</td>
-                <td>@item.Category.CategoryName</td>
-                @if (User.IsInRole("Admin"))
+@if (ViewBag.Message != null)
+{
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <div class="row">
+            <h3 class="text-success">
+                @ViewBag.Message
+            </h3>
+        </div>
+    </div>
+}
+else
+{
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <div class="row">
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Blog Adı</th>
+                    <th>Kategori</th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
                 {
-                    <td>
-                        <a href="/Admin/Dashboard/DeleteBlog/@item.BlogID/" class="btn btn-outline-danger">Sil</a>
-                        <a href="/Admin/Dashboard/UpdateBlog/@item.BlogID/" class="btn btn-outline-info">Düzenle</a>
-                    </td>
+                    count++;
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.BlogTitle</td>
+                        <td>@item.Category.CategoryName</td>
+                        <td>
+                            <a href="/Admin/Dashboard/DeleteBlog/@item.BlogID/" class="btn btn-outline-danger">Sil</a>
+                            <a href="/Admin/Dashboard/UpdateBlog/@item.BlogID/" class="btn btn-outline-info">Düzenle</a>
+                        </td>
+                    </tr>
                 }
-            </tr>
-        }
-    </table>
-</div>
+            </table>
+        </div>
+    </div>
+}

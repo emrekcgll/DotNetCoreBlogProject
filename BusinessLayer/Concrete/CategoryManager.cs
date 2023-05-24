@@ -25,12 +25,12 @@ namespace BusinessLayer.Concrete
 
         public void TDelete(Category t)
         {
-            throw new NotImplementedException();
+            _categoryDal.Delete(t);
         }
 
         public Category TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetListById(id);
         }
 
         public List<Category> TGetList()
@@ -40,7 +40,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Category t)
         {
-            throw new NotImplementedException();
+            _categoryDal.Update(t);
         }
     }
 }

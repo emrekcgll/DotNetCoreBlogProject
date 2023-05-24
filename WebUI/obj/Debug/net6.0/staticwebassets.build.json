@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Duc+d1Tn+1feLBSTZEQXdT/Oi7O4dsBseJLNChHxdPU=",
+  "Hash": "giN5vyPylG4IPUo9bryJ/DDwbxfFmXGOtpdGDdA9PxA=",
   "Source": "WebUI",
   "BasePath": "_content/WebUI",
   "Mode": "Default",
@@ -12801,12 +12801,12 @@
       "OriginalItemSpec": "wwwroot\\images\\3f2f2493-e1c1-406f-a08a-2d557ffed4f1_img-worlds-of-adventure.jpg"
     },
     {
-      "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\4d236be0-2d08-49bb-bbec-58729115ab35_Abbatron-HH-Smith-100.jpg",
+      "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\6b854543-1e48-427e-baa9-a48e6c97263a_indir.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
-      "RelativePath": "images/4d236be0-2d08-49bb-bbec-58729115ab35_Abbatron-HH-Smith-100.jpg",
+      "RelativePath": "images/6b854543-1e48-427e-baa9-a48e6c97263a_indir.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -12815,15 +12815,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\4d236be0-2d08-49bb-bbec-58729115ab35_Abbatron-HH-Smith-100.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\6b854543-1e48-427e-baa9-a48e6c97263a_indir.jpg"
     },
     {
-      "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\9efb13f2-63b8-409e-93bc-f3da2d7c687e_1.jpg",
+      "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\773f5e83-b437-4b55-b0b4-404b66e12e97_Abbatron-HH-Smith-699.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
-      "RelativePath": "images/9efb13f2-63b8-409e-93bc-f3da2d7c687e_1.jpg",
+      "RelativePath": "images/773f5e83-b437-4b55-b0b4-404b66e12e97_Abbatron-HH-Smith-699.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -12832,7 +12832,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\9efb13f2-63b8-409e-93bc-f3da2d7c687e_1.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\773f5e83-b437-4b55-b0b4-404b66e12e97_Abbatron-HH-Smith-699.jpg"
+    },
+    {
+      "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\874011b0-d6ed-4efc-85a4-aae7e5380abb_images.jpg",
+      "SourceId": "WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUI",
+      "RelativePath": "images/874011b0-d6ed-4efc-85a4-aae7e5380abb_images.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\874011b0-d6ed-4efc-85a4-aae7e5380abb_images.jpg"
     },
     {
       "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\bc1955cc-f41b-49cc-ba87-67bf4c3a69f4_1.jpg",
@@ -12852,12 +12869,12 @@
       "OriginalItemSpec": "wwwroot\\images\\bc1955cc-f41b-49cc-ba87-67bf4c3a69f4_1.jpg"
     },
     {
-      "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\fce3b478-2862-4715-a7a0-ebf265671575_Abbatron-HH-Smith-137.jpg",
+      "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\c45534db-5313-4d79-b87c-4919a2503fdf_Abbatron-HH-Smith-605.jpg",
       "SourceId": "WebUI",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\",
       "BasePath": "_content/WebUI",
-      "RelativePath": "images/fce3b478-2862-4715-a7a0-ebf265671575_Abbatron-HH-Smith-137.jpg",
+      "RelativePath": "images/c45534db-5313-4d79-b87c-4919a2503fdf_Abbatron-HH-Smith-605.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -12866,7 +12883,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\fce3b478-2862-4715-a7a0-ebf265671575_Abbatron-HH-Smith-137.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\c45534db-5313-4d79-b87c-4919a2503fdf_Abbatron-HH-Smith-605.jpg"
+    },
+    {
+      "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\fd682ea0-d100-4f4d-9a8a-34f33fa6dee6_Abbatron-HH-Smith-SMA5113.jpg",
+      "SourceId": "WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUI",
+      "RelativePath": "images/fd682ea0-d100-4f4d-9a8a-34f33fa6dee6_Abbatron-HH-Smith-SMA5113.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\fd682ea0-d100-4f4d-9a8a-34f33fa6dee6_Abbatron-HH-Smith-SMA5113.jpg"
     },
     {
       "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\js\\site.js",

@@ -19,7 +19,7 @@
                     <div>
                         <label for="defaultFormControlInput" class="form-label">Category</label>
                         <select class="form-control" name="CategoryID">
-                            @foreach (var item in @ViewBag.CategoryList)
+                            @foreach (var item in ViewBag.CategoryList)
                             {
                                 <option value="@item.Value">@item.Text</option>
                             }

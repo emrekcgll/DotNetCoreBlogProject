@@ -3005,20 +3005,28 @@
       "PackagePath": "staticwebassets\\images\\3f2f2493-e1c1-406f-a08a-2d557ffed4f1_img-worlds-of-adventure.jpg"
     },
     {
-      "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\4d236be0-2d08-49bb-bbec-58729115ab35_Abbatron-HH-Smith-100.jpg",
-      "PackagePath": "staticwebassets\\images\\4d236be0-2d08-49bb-bbec-58729115ab35_Abbatron-HH-Smith-100.jpg"
+      "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\6b854543-1e48-427e-baa9-a48e6c97263a_indir.jpg",
+      "PackagePath": "staticwebassets\\images\\6b854543-1e48-427e-baa9-a48e6c97263a_indir.jpg"
     },
     {
-      "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\9efb13f2-63b8-409e-93bc-f3da2d7c687e_1.jpg",
-      "PackagePath": "staticwebassets\\images\\9efb13f2-63b8-409e-93bc-f3da2d7c687e_1.jpg"
+      "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\773f5e83-b437-4b55-b0b4-404b66e12e97_Abbatron-HH-Smith-699.jpg",
+      "PackagePath": "staticwebassets\\images\\773f5e83-b437-4b55-b0b4-404b66e12e97_Abbatron-HH-Smith-699.jpg"
+    },
+    {
+      "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\874011b0-d6ed-4efc-85a4-aae7e5380abb_images.jpg",
+      "PackagePath": "staticwebassets\\images\\874011b0-d6ed-4efc-85a4-aae7e5380abb_images.jpg"
     },
     {
       "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\bc1955cc-f41b-49cc-ba87-67bf4c3a69f4_1.jpg",
       "PackagePath": "staticwebassets\\images\\bc1955cc-f41b-49cc-ba87-67bf4c3a69f4_1.jpg"
     },
     {
-      "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\fce3b478-2862-4715-a7a0-ebf265671575_Abbatron-HH-Smith-137.jpg",
-      "PackagePath": "staticwebassets\\images\\fce3b478-2862-4715-a7a0-ebf265671575_Abbatron-HH-Smith-137.jpg"
+      "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\c45534db-5313-4d79-b87c-4919a2503fdf_Abbatron-HH-Smith-605.jpg",
+      "PackagePath": "staticwebassets\\images\\c45534db-5313-4d79-b87c-4919a2503fdf_Abbatron-HH-Smith-605.jpg"
+    },
+    {
+      "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\fd682ea0-d100-4f4d-9a8a-34f33fa6dee6_Abbatron-HH-Smith-SMA5113.jpg",
+      "PackagePath": "staticwebassets\\images\\fd682ea0-d100-4f4d-9a8a-34f33fa6dee6_Abbatron-HH-Smith-SMA5113.jpg"
     },
     {
       "Id": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\js\\site.js",

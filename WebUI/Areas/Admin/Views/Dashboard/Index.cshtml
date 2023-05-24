@@ -7,17 +7,15 @@
 }
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
-        <div class="col-lg-12 mb-4 order-0">
+        <div class="col-lg-6 mb-4 order-0">
             <div class="card">
                 <div class="d-flex align-items-end row">
                     <div class="col-sm-7">
                         <div class="card-body">
                             <h5 class="card-title text-primary">Hoşgeldiniz @ViewBag.Name (@foreach (var role in ViewBag.Role){@role}) 🎉</h5>
                             <p class="mb-4">
-                                You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
-                                your profile.
+                               Lorem ipsum dolar sit amet..
                             </p>
-                            <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
                         </div>
                     </div>
                     <div class="col-sm-5 text-center text-sm-left">
@@ -70,29 +68,19 @@
                 <div class="card h-100">
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h5 class="card-title m-0 me-2">Onay Bekleyen Blog Listesi</h5>
-                        <div class="dropdown">
-                            <button class="btn p-0"
-                                    type="button"
-                                    id="transactionID"
-                                    data-bs-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false">
-                            </button>
-                        </div>
                     </div>
                     <div class="card-body">
                         <ul class="p-0 m-0">
-
                             @foreach (var item in Model)
                             {
                                 <li class="d-flex mb-4 pb-1">
                                     <div class="avatar flex-shrink-0 me-3">
-                                        <img src="~/sneat-1.0.0/assets/img/icons/unicons/paypal.png" alt="User" class="rounded" />
+                                        <img src="~/images/@item.BlogImage" alt="User" class="rounded" />
                                     </div>
                                     <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                         <div class="me-2">
                                             <small class="text-muted d-block mb-1">@item.AppUserId</small>
-                                            <h6 class="mb-0">@item.BlogTitle</h6>
+                                            <h6 class="mb-0"><a href="/Admin/Dashboard/UpdateBlog/@item.BlogID/">@item.BlogTitle</a></h6>
                                         </div>
                                         <div class="user-progress d-flex align-items-center gap-1">
                                             <h6 class="mb-0">@item.Category.CategoryName</h6>
@@ -100,11 +88,39 @@
                                     </div>
                                 </li>
                             }
-
                         </ul>
                     </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4 order-2">
+                <div class="card h-100">
+                    <div id="chart"></div>
                 </div>
             </div>
         }
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+    var options = {
+        series: [@ViewBag.BlogCount, @ViewBag.AllBlogCount, @ViewBag.PendingBlogCount],
+        chart: {
+            type: 'donut',
+        },
+        labels: ['Yayınlanan Blog', 'Toplam Blog', 'Onay Bekleyen Blog'],
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+</script>
