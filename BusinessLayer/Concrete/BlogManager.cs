@@ -66,5 +66,20 @@ namespace BusinessLayer.Concrete
         {
             return _blogDal.GetLastThreeBlog();
         }
+
+        public List<Blog> TGetTodaysBlogs()
+        {
+            return _blogDal.GetTodaysBlogs();
+        }
+
+        public List<Blog> TGetNotTodaysBlogs()
+        {
+            return _blogDal.GetNotTodaysBlogs();
+        }
+
+        public List<Blog> TGetLast6Blog()
+        {
+            return _blogDal.GetLast6Blog();
+        }
     }
 }

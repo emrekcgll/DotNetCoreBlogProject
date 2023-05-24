@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.DotNet.MSIdentity.Shared;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace WebUI.Areas.Admin.Controllers
 {
@@ -29,6 +32,14 @@ namespace WebUI.Areas.Admin.Controllers
             var blogList = _blogService.TGetBlogListWithCategory();
             var allBlogList = _blogService.TGetList();
             var pendingBlogList = _blogService.TGetBlogListWithCategoryByPendingApproval();
+
+            var todaysBlog = _blogService.TGetTodaysBlogs();
+            var notTodaysBlog = _blogService.TGetNotTodaysBlogs();
+            int todaysBlogCount = todaysBlog.Count();
+            int notTodaysBlogCount = notTodaysBlog.Count();
+            double oran = (double)todaysBlogCount / notTodaysBlogCount * 100;
+            ViewBag.Oran = oran;
+
             ViewBag.PendingBlogCount = pendingBlogList.Count();
             ViewBag.AllBlogCount = allBlogList.Count();
             ViewBag.BlogCount = blogList.Count();

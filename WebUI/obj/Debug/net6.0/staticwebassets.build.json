@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "giN5vyPylG4IPUo9bryJ/DDwbxfFmXGOtpdGDdA9PxA=",
+  "Hash": "g+Epbzvf2k9mHfVsVOXfTi+cs7NoL80qe+YlQL1jSR8=",
   "Source": "WebUI",
   "BasePath": "_content/WebUI",
   "Mode": "Default",
@@ -12850,6 +12850,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\874011b0-d6ed-4efc-85a4-aae7e5380abb_images.jpg"
+    },
+    {
+      "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\b966a216-8734-43c4-8b73-ab0eb5a8d370_Abbatron-HH-Smith-181.jpg",
+      "SourceId": "WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUI",
+      "RelativePath": "images/b966a216-8734-43c4-8b73-ab0eb5a8d370_Abbatron-HH-Smith-181.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\b966a216-8734-43c4-8b73-ab0eb5a8d370_Abbatron-HH-Smith-181.jpg"
     },
     {
       "Identity": "D:\\github\\DotNetCoreBlogProject\\WebUI\\wwwroot\\images\\bc1955cc-f41b-49cc-ba87-67bf4c3a69f4_1.jpg",

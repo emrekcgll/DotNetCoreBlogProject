@@ -14,5 +14,10 @@ namespace BusinessLayer.Abstract
         List<Blog> TGetBlogListWithCategoryByPendingApproval();
         List<Blog> TGetLastBlogListWithWriter(int id);
         List<Blog> TGetLastThreeBlog();
+
+        List<Blog> TGetTodaysBlogs();
+        List<Blog> TGetNotTodaysBlogs();
+
+        List<Blog> TGetLast6Blog();
     }
 }
