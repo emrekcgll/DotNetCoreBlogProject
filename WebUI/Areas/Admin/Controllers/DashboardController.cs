@@ -51,6 +51,12 @@ namespace WebUI.Areas.Admin.Controllers
             return View(pendingBlogList);
         }
 
+        [Authorize(Roles = "Admin,Member")]
+        public async Task<IActionResult> MessagePage()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult BlogList()
         {

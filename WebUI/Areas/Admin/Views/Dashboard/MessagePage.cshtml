@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "MessagePage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["ActivePage"] = "Message";
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="card overflow-hidden mb-4" style="height: 300px">
+                <h5 class="card-header">Live Chatting</h5>
+                <div class="card-body" id="vertical-example">
+                    <p id="messages"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <h5 class="card-header">Send Message</h5>
+                <div class="card-body demo-vertical-spacing demo-only-element">
+                    <div class="input-group">
+                        <textarea id="messageInput" type="text" class="form-control"></textarea>
+                        <button id="sendButton" type="button" class="btn btn-outline-primary">Action</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+<script>
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/chatHub")
+        .build();
+
+    connection.on("ReceiveMessage", (username, message) => {
+        const msg = document.createElement("div");
+        msg.textContent = `${username}: ${message}`;
+        document.getElementById("messages").appendChild(msg);
+    });
+
+    connection.start().catch(err => console.error(err.toString()));
+
+    document.getElementById("sendButton").addEventListener("click", event => {
+        const message = document.getElementById("messageInput").value;
+        connection.invoke("SendMessage", message).catch(err => console.error(err.toString()));
+        event.preventDefault();
+    });
+</script>
+<script>
+    document.getElementById("sendButton").addEventListener("click", function () {
+        var scrollContainer = document.getElementById('vertical-example');
+        scrollContainer.scrollTop = scrollContainer.scrollHeight;
+    });
+</script>

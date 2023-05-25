@@ -126,6 +126,13 @@
                             </a>
                         </li>
                     }
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Mesajlaşma</span></li>
+                    <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "Message") {<text>active</text>}">
+                        <a href="/Admin/Dashboard/MessagePage/" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-collection"></i>
+                            <div data-i18n="Basic">Canlı Mesajlaşma</div>
+                        </a>
+                    </li>    
                 </ul>
             </aside>
             <div class="layout-page">
@@ -209,6 +216,8 @@
     <script src="~/sneat-1.0.0/assets/vendor/js/menu.js"></script>
     <script src="~/sneat-1.0.0/assets/js/main.js"></script>
     <script src="~/sneat-1.0.0/assets/js/dashboards-analytics.js"></script>
+    <script src="~/sneat-1.0.0/assets/js/extended-ui-perfect-scrollbar.js"></script>
+
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

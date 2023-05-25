@@ -6,11 +6,14 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using WebUI.Areas.Admin.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR();
+
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 
@@ -53,6 +56,7 @@ app.UseAuthentication();
 app.UseRouting();
 
 app.UseAuthorization();
+app.MapHub<ChatHub>("/chatHub");
 
 app.UseEndpoints(endpoints =>
 {
