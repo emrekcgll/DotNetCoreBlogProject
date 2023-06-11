@@ -108,5 +108,10 @@ namespace WebUI.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Login");
         }
+
+        public IActionResult NotAuthorized()
+        {
+            return View();
+        }
     }
 }

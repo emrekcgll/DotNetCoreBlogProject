@@ -27,18 +27,33 @@ else
                     <th>Kategori</th>
                     <th></th>
                 </tr>
-                @foreach (var item in Model)
+                @if (User.IsInRole("Admin"))
                 {
-                    count++;
-                    <tr>
-                        <td>@count</td>
-                        <td>@item.BlogTitle</td>
-                        <td>@item.Category.CategoryName</td>
-                        <td>
-                            <a href="/Admin/Dashboard/DeleteBlog/@item.BlogID/" class="btn btn-outline-danger">Sil</a>
-                            <a href="/Admin/Dashboard/UpdateBlog/@item.BlogID/" class="btn btn-outline-info">Düzenle</a>
-                        </td>
-                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.BlogTitle</td>
+                            <td>@item.Category.CategoryName</td>
+                            <td>
+                                <a href="/Admin/Dashboard/DeleteBlog/@item.BlogID/" class="btn btn-outline-danger">Sil</a>
+                                <a href="/Admin/Dashboard/UpdateBlog/@item.BlogID/" class="btn btn-outline-info">Düzenle</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.BlogTitle</td>
+                            <td>@item.Category.CategoryName</td>
+                        </tr>
+                    }
                 }
             </table>
         </div>

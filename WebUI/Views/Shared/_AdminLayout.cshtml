@@ -155,20 +155,13 @@
                         </div>
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <li class="nav-item lh-1 me-3">
-                                <a class="github-button"
-                                   href="https://github.com/themeselection/sneat-html-admin-template-free"
-                                   data-icon="octicon-star"
-                                   data-size="large"
-                                   data-show-count="true"
-                                   aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">Star</a>
-                            </li>
-                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                                    <div class="avatar avatar-online">
-                                        <img src="~/sneat-1.0.0/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                                    </div>
-                                </a>
-                                @await Component.InvokeAsync("AdminProfileOperation")
+                                <form method="post" asp-area="" asp-controller="Login" asp-action="Logout">
+                                    <button class="dropdown-item" type="submit">
+                                        @Html.AntiForgeryToken()
+                                        <i class="bx bx-power-off me-2"></i>
+                                        <span class="align-middle">Log Out</span>
+                                    </button>
+                                </form>
                             </li>
                         </ul>
                     </div>

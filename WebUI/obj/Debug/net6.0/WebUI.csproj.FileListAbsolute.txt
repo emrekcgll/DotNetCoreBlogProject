@@ -563,3 +563,4 @@ D:\github\DotNetCoreBlogProject\WebUI\obj\Debug\net6.0\refint\WebUI.dll
 D:\github\DotNetCoreBlogProject\WebUI\obj\Debug\net6.0\WebUI.pdb
 D:\github\DotNetCoreBlogProject\WebUI\obj\Debug\net6.0\WebUI.genruntimeconfig.cache
 D:\github\DotNetCoreBlogProject\WebUI\obj\Debug\net6.0\ref\WebUI.dll
+C:\Users\Emre Koçoğlu\Desktop\DotNetCoreBlogProject\WebUI\bin\Debug\net6.0\PagedList.dll

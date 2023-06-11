@@ -17,17 +17,56 @@ namespace WebUI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(int? page)
+        public IActionResult Index(int? page, string? searchQuery)
         {
             using (var c = new Context())
             {
-                int pageSize = 3; // Sayfa başına görüntülenecek data sayısı
-                int pageNumber = (page ?? 1); // Sayfa numarası, varsayılan olarak 1
+                if (string.IsNullOrEmpty(searchQuery))
+                {
+                    int pageSize = 3; // Sayfa başına görüntülenecek data sayısı
+                    int pageNumber = (page ?? 1); // Sayfa numarası, varsayılan olarak 1
 
-                var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Where(z => z.BlogStatus == true);
-                var pagedResult = query.ToPagedList(pageNumber, pageSize);
+                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(p => p.BlogStatus == true);
+                    var pagedResult = query.ToPagedList(pageNumber, pageSize);
 
-                return View(pagedResult);
+                    return View(pagedResult);
+                }
+                else
+                {
+                    int pageSize = 3; // Sayfa başına görüntülenecek data sayısı
+                    int pageNumber = (page ?? 1); // Sayfa numarası, varsayılan olarak 1
+
+                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(b => b.BlogTitle.Contains(searchQuery));
+                    var pagedResult = query.ToPagedList(pageNumber, pageSize);
+
+                    return View(pagedResult);
+                }
+            }
+        }
+
+        public IActionResult FilterByCategory(int? page, int id, string? searchQuery)
+        {
+            using (var c = new Context())
+            {
+                if (string.IsNullOrEmpty(searchQuery))
+                {
+                    int pageSize = 3; // Sayfa başına görüntülenecek data sayısı
+                    int pageNumber = (page ?? 1);
+
+                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(x => x.CategoryID == id && x.BlogStatus == true);
+                    var pagedResult = query.ToPagedList(pageNumber, pageSize);
+                    return View(pagedResult);
+                }
+                else
+                {
+                    int pageSize = 3; // Sayfa başına görüntülenecek data sayısı
+                    int pageNumber = (page ?? 1); // Sayfa numarası, varsayılan olarak 1
+
+                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(b => b.BlogTitle.Contains(searchQuery));
+                    var pagedResult = query.ToPagedList(pageNumber, pageSize);
+
+                    return View(pagedResult);
+                }
             }
         }
 
@@ -37,6 +76,16 @@ namespace WebUI.Controllers
             var values = _blogService.TGetBlogByIdWithCategory(id);
             ViewBag.Id = id;
             return View(values);
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult About()
+        {
+            return View();
         }
     }
 }

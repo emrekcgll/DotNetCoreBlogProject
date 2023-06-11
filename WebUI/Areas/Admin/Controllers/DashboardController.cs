@@ -1,9 +1,12 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 
 namespace WebUI.Areas.Admin.Controllers
 {
@@ -36,12 +39,15 @@ namespace WebUI.Areas.Admin.Controllers
             int todaysBlogCount = todaysBlog.Count();
             int notTodaysBlogCount = notTodaysBlog.Count();
             double oran = (double)todaysBlogCount / notTodaysBlogCount * 100;
-            ViewBag.Oran = oran;
+            ViewBag.Oran = (int)oran;
 
             var todaysComment = _commentService.TGetCommentListToday().Count();
             var notTodaysComment = _commentService.TGetCommentListNotToday().Count();
             double commentOran = (double)todaysComment / notTodaysComment * 100;
             ViewBag.CommentOran = (int)commentOran;
+
+            Console.WriteLine(todaysComment);
+            Console.WriteLine(notTodaysComment);
 
             ViewBag.PendingBlogCount = pendingBlogList.Count();
             ViewBag.AllBlogCount = allBlogList.Count();
@@ -58,12 +64,28 @@ namespace WebUI.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult BlogList()
+        public async Task<IActionResult> BlogList()
         {
-            var values = _blogService.TGetBlogListWithCategory();
-            if (values.Count() == 0)
-                ViewBag.Message = "Henüz hiç blog yayınlanmamış...";
-            return View(values);
+            if (User.IsInRole("Admin"))
+            {
+                var values = _blogService.TGetBlogListWithCategory();
+                if (values.Count() == 0)
+                    ViewBag.Message = "Henüz hiç blog yayınlanmamış...";
+                return View(values);
+            }
+            else
+            {
+                var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
+                using (var c = new Context())
+                {
+                    var values = c.Blogs.Include(x => x.Category).Include(y => y.AppUser).Include(z => z.Comments).Where(y => y.AppUserId == user.Id).ToList();
+                    if (values.Count() == 0)
+                        ViewBag.Message = "Henüz hiç blog yayınlanmamış...";
+                    return View(values);
+                }
+            }
+
         }
 
         [HttpGet]

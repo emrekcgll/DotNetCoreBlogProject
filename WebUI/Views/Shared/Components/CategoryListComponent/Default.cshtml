@@ -7,7 +7,7 @@
         <ul id="cat_nav">
             @foreach (var item in Model)
             {
-                <li><a href="#">@item.CategoryName</a></li>
+                <li><a href="/Default/FilterByCategory/@item.CategoryID/">@item.CategoryName</a></li>
             }
         </ul>
     </div>

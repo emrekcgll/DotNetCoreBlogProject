@@ -18,81 +18,92 @@
 <div class="container margin_60_35">
     <div class="row">
         <div class="col-lg-9 pe-lg-5">
-            @foreach (var item in Model)
+            @if (Model != null && Model.Count > 0)
             {
-                <div class="post">
-                    <figure class="animated mb-0"><a href="/Default/Details/@item.BlogID"><img src="~/images/@item.BlogImage" alt="" class="img-fluid"></a></figure>
-                    <div class="post_info clearfix">
-                        <div class="post-left">
-                            <ul>
-                                <li><i class="icon-calendar-empty"></i> On <span>@item.BlogCreatedDate.ToString("dd MMM yyyy")</span></li>
-                                <li><i class="icon-inbox-alt"></i> In <a href="#">@item.Category.CategoryName</a></li>
-                            </ul>
-                        </div>
-                        <div class="post-right"><i class="icon-comment"></i>@item.Comments.Count()</div>
-                    </div>
-                    <h2>@item.BlogTitle</h2>
-                    <p>
-                        @item.BlogContent
-                    </p>
-                    <a href="/Default/Details/@item.BlogID" class="btn_1">Read more</a>
-                </div>
-            }
-            <div class="text-center">
-                <div class="pagination">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination">
-                            @if (Model.HasPreviousPage)
-                            {
-                                <li class="page-item">
-                                    <a class="page-link" href="@Url.Action("Index", new { page = Model.PageNumber - 1 })">Previous</a>
-                                </li>
-                            }
-                            else
-                            {
-                                <li class="page-item disabled">
-                                    <span class="page-link">Previous</span>
-                                </li>
-                            }
 
-                            @for (int i = 1; i <= Model.PageCount; i++)
-                            {
-                                if (Model.PageNumber == i)
+                @foreach (var item in Model)
+                {
+                    <div class="post">
+                        <figure class="animated mb-0"><a href="/Default/Details/@item.BlogID"><img src="~/images/@item.BlogImage" alt="" class="img-fluid"></a></figure>
+                        <div class="post_info clearfix">
+                            <div class="post-left">
+                                <ul>
+                                    <li><i class="icon-calendar-empty"></i> On <span>@item.BlogCreatedDate.ToString("dd MMM yyyy")</span></li>
+                                    <li><i class="icon-inbox-alt"></i> In <a href="/Default/FilterByCategory/@item.Category.CategoryID/">@item.Category.CategoryName</a></li>
+                                    <li><i class="icon-user"></i> Writed by <span>@item.AppUser.UserName</span></li>
+                                </ul>
+                            </div>
+                            <div class="post-right"><i class="icon-comment"></i>@item.Comments.Count()</div>
+                        </div>
+                        <h2>@item.BlogTitle</h2>
+                        <p>
+                            @item.BlogContent
+                        </p>
+                        <a href="/Default/Details/@item.BlogID" class="btn_1">Read more</a>
+                    </div>
+                }
+                <div class="text-center">
+                    <div class="pagination">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                @if (Model.HasPreviousPage)
                                 {
-                                    <li class="page-item active">
-                                        <span class="page-link">@i</span>
+                                    <li class="page-item">
+                                        <a class="page-link" href="@Url.Action("Index", new { page = Model.PageNumber - 1 })">Previous</a>
                                     </li>
                                 }
                                 else
                                 {
-                                    <li class="page-item">
-                                        <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                    <li class="page-item disabled">
+                                        <span class="page-link">Previous</span>
                                     </li>
                                 }
-                            }
 
-                            @if (Model.HasNextPage)
-                            {
-                                <li class="page-item">
-                                    <a class="page-link" href="@Url.Action("Index", new { page = Model.PageNumber + 1 })">Next</a>
-                                </li>
-                            }
-                            else
-                            {
-                                <li class="page-item disabled">
-                                    <span class="page-link">Next</span>
-                                </li>
-                            }
-                        </ul>
-                    </nav>
+                                @for (int i = 1; i <= Model.PageCount; i++)
+                                {
+                                    if (Model.PageNumber == i)
+                                    {
+                                        <li class="page-item active">
+                                            <span class="page-link">@i</span>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="page-item">
+                                            <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                        </li>
+                                    }
+                                }
+
+                                @if (Model.HasNextPage)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" href="@Url.Action("Index", new { page = Model.PageNumber + 1 })">Next</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="page-item disabled">
+                                        <span class="page-link">Next</span>
+                                    </li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-            </div>
+            }
+            else
+            {
+                <div class="alert alert-danger">Arama sonucu bulunamadı!</div>
+            }
         </div>
         <div class="col-lg-3">
             <div class="box_style_1">
                 <div class="widget">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search...">
+                        <form>
+                            <input type="text" name="searchQuery" class="form-control" placeholder="Search...">
+                        </form>
                     </div>
                 </div>
                 <hr>

@@ -37,6 +37,13 @@ builder.Services.AddMvc(config =>
     config.Filters.Add(new AuthorizeFilter(policy));
 });
 builder.Services.AddMvc();
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Login/Login/"; // Kullanýcýnýn giriþ yapmasý gereken URL
+    options.AccessDeniedPath = "/Login/NotAuthorized/"; // Yetkilendirme reddedildiðinde yönlendirilecek URL
+});
+
+
 var app = builder.Build();
 
 
