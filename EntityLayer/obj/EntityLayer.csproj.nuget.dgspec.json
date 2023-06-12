@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {}
+    "C:\\Users\\Admin11\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\Admin11\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Admin11\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj",
-        "packagesPath": "C:\\Users\\Emre Koçoğlu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emre Koçoğlu\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\obj\\",
+        "projectPath": "C:\\Users\\Admin11\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\EntityLayer.csproj",
+        "packagesPath": "C:\\Users\\Admin11\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin11\\Desktop\\DotNetCoreBlogProject\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emre Koçoğlu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin11\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -94,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -17,6 +17,7 @@
                             <ul>
                                 <li><i class="icon-calendar-empty"></i>On <span>@item.BlogCreatedDate.ToString("dd MMM yyyy")</span></li>
                                 <li><i class="icon-inbox-alt"></i>In <a href="#">@item.Category.CategoryName</a></li>
+                                <li><i class="icon-user"></i> Writed by <span>@item.AppUser.UserName</span></li>
                             </ul>
                         </div>
                         <div class="post-right"><i class="icon-comment"></i><a href="#">@item.Comments.Count() </a>Comments</div>

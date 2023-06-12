@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Linq;
 
 namespace WebUI.Areas.Admin.Controllers
 {
@@ -46,8 +45,15 @@ namespace WebUI.Areas.Admin.Controllers
             double commentOran = (double)todaysComment / notTodaysComment * 100;
             ViewBag.CommentOran = (int)commentOran;
 
-            Console.WriteLine(todaysComment);
-            Console.WriteLine(notTodaysComment);
+            using (var c = new Context())
+            {
+                var userCount = c.Users.ToList().Count();
+                ViewBag.UserCount = userCount;
+
+                var passiveuserCount = c.Users.Where(x => x.LockoutEnd != null).ToList().Count();
+                ViewBag.PassiveUserCount = passiveuserCount;
+            }
+
 
             ViewBag.PendingBlogCount = pendingBlogList.Count();
             ViewBag.AllBlogCount = allBlogList.Count();
@@ -235,6 +241,77 @@ namespace WebUI.Areas.Admin.Controllers
         {
             _categoryService.TUpdate(p);
             return RedirectToAction("CategoryList", "Dashboard", new { area = "Admin" });
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> LockedUser()
+        {
+            using (var c = new Context())
+            {
+                var values = c.Users.Where(x => x.LockoutEnd != null).ToList().Count();
+                if (values > 0)
+                {
+                    var value = c.Users.Where(x => x.LockoutEnd != null).ToList();
+                    return View(value);
+                }
+                else
+                {
+                    ViewBag.Message = "Bloke olmuş üye bulunamadı.";
+                    return View();
+                }
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> MakeActive(int id)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user != null)
+            {
+                // Kullanıcının blokajını kaldırın
+                user.LockoutEnd = null;
+                await _userManager.UpdateAsync(user);
+            }
+            return RedirectToAction("LockedUser", "Dashboard", new { area = "Admin" });
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> UserList()
+        {
+            using (var c = new Context())
+            {
+                var values = c.Users.ToList();
+
+                if (TempData.ContainsKey("ErrorMessage"))
+                {
+                    ViewBag.ErrorMessage = TempData["ErrorMessage"];
+                }
+
+                return View(values);
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user != null)
+            {
+                var userRole = await _userManager.GetRolesAsync(user);
+                if (userRole.Contains("Admin"))
+                {
+                    TempData["ErrorMessage"] = "Admin rolü silinemez.";
+                    return RedirectToAction("UserList", "Dashboard", new { area = "Admin" });
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Başarı ile silindi.";
+                    await _userManager.DeleteAsync(user);
+                }
+            }
+            return RedirectToAction("UserList", "Dashboard", new { area = "Admin" });
         }
     }
 }

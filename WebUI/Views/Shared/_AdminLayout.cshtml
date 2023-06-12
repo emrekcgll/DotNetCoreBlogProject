@@ -125,6 +125,21 @@
                                 <span id="pending-blog-count" class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20"></span>
                             </a>
                         </li>
+                        <li class="menu-header small text-uppercase"><span class="menu-header-text">Üye İşlemleri</span></li>
+                        <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "UserList") {<text>active</text>}">
+                            <a href="/Admin/Dashboard/UserList/" class="menu-link">
+                                <i class="menu-icon tf-icons bx bx-collection"></i>
+                                <div data-i18n="Basic">Üye Listesi</div>
+                                <span id="pending-blog-count" class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20"></span>
+                            </a>
+                        </li>
+                        <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "LockedUser") {<text>active</text>}">
+                            <a href="/Admin/Dashboard/LockedUser/" class="menu-link">
+                                <i class="menu-icon tf-icons bx bx-collection"></i>
+                                <div data-i18n="Basic">Bloke Olmuş Üyeler</div>
+                                <span id="pending-blog-count" class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20"></span>
+                            </a>
+                        </li>
                     }
                     <li class="menu-header small text-uppercase"><span class="menu-header-text">Mesajlaşma</span></li>
                     <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "Message") {<text>active</text>}">

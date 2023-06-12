@@ -23,6 +23,10 @@
                     <div class="card-body p-4 p-sm-5">
                         <h5 class="card-title text-center mb-4 fs-5">Login</h5>
                         <form method="post">
+                            @if (ViewBag.ErrorMessage != null)
+                            {
+                                <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                            }
                             <div class="form-floating mb-3">
                                 <input type="text" asp-for="username" class="form-control">
                                 <label>username</label>
@@ -31,7 +35,7 @@
                             <div class="form-floating mb-3">
                                 <input type="password" asp-for="password" class="form-control">
                                 <label>Password</label>
-                                <span asp-validation-for="username"></span>
+                                <span asp-validation-for="password" class="text-danger"></span>
                             </div>
                             <div class="d-grid">
                                 <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Login</button>

@@ -35,47 +35,49 @@ namespace WebUI.Controllers
                 UserName = p.UserName,
                 Email = p.Email,
             };
-
-            var existingUser = await _userManager.FindByNameAsync(p.UserName);
-            if (existingUser != null)
+            Console.WriteLine(appUser);
+            if (ModelState.IsValid)
             {
-                ModelState.AddModelError("", "This username is already exist.");
-                return View();
-            }
-
-            existingUser = await _userManager.FindByEmailAsync(p.Email);
-            if (existingUser != null)
-            {
-                ModelState.AddModelError("", "This email is already exist.");
-                return View();
-            }
-
-            existingUser = await _userManager.Users.FirstOrDefaultAsync(u => u.Name == p.Name && u.Surname == p.Surname);
-            if (existingUser != null)
-            {
-                ModelState.AddModelError("", "This Name and Surname is already exist.");
-                return View();
-            }
-
-            if (p.Password == p.ConfirmPassword)
-            {
-                var result = await _userManager.CreateAsync(appUser, p.Password);
-                if (result.Succeeded)
+                var existingUser = await _userManager.FindByNameAsync(p.UserName);
+                if (existingUser != null)
                 {
-                    var roleResult = await _userManager.AddToRoleAsync(appUser, "Member"); //add role
-                    return RedirectToAction("Login");
+                    ModelState.AddModelError("", "This username is already exist.");
+                    return View();
                 }
-                else
+
+                existingUser = await _userManager.FindByEmailAsync(p.Email);
+                if (existingUser != null)
                 {
-                    foreach (var item in result.Errors)
+                    ModelState.AddModelError("", "This email is already exist.");
+                    return View();
+                }
+
+                existingUser = await _userManager.Users.FirstOrDefaultAsync(u => u.Name == p.Name && u.Surname == p.Surname);
+                if (existingUser != null)
+                {
+                    ModelState.AddModelError("", "This Name and Surname is already exist.");
+                    return View();
+                }
+
+                if (p.Password == p.ConfirmPassword)
+                {
+                    var result = await _userManager.CreateAsync(appUser, p.Password);
+                    if (result.Succeeded)
                     {
-                        ModelState.AddModelError("", item.Description);
+                        var roleResult = await _userManager.AddToRoleAsync(appUser, "Member"); //add role
+                        return RedirectToAction("Login");
+                    }
+                    else
+                    {
+                        foreach (var item in result.Errors)
+                        {
+                            ModelState.AddModelError("", item.Description);
+                        }
                     }
                 }
             }
             return View(p);
         }
-
 
         [HttpGet]
         public async Task<IActionResult> Login()
@@ -95,7 +97,8 @@ namespace WebUI.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Register", "Login");
+                    ViewBag.ErrorMessage = "Invalid Username or Password!";
+                    return View();
                 }
             }
             return View();
