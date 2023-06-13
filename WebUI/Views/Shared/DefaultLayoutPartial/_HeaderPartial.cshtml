@@ -7,8 +7,23 @@
             </div>
             <div class="col-md-9">
                 <ul id="top_links">
-                    <li><a href="tel://004542344599" id="phone_top">0045 043204434</a><span id="opening">Mon - Sat 8.00/18.00</span></li>
-                    <li><a style="color:red; font-weight:bold; font-size:13px;" href="/Login/Login/">Login</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a style="color:green; font-weight:bold; font-size:13px;">Hoşgeldiniz @User.Identity.Name</a></li>
+                        <li><a href="/Admin/Dashboard/Index/" style="color:darkgreen; font-weight:bold; font-size:13px;">Dashboard</a></li>
+                        <li>
+                            <form method="post" asp-area="" asp-controller="Login" asp-action="Logout">
+                                <button class="dropdown-item" style="color:red; font-weight:bold; font-size:13px;" type="submit">
+                                    @Html.AntiForgeryToken()
+                                    <span class="align-middle">Log Out</span>
+                                </button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li><a style="color:red; font-weight:bold; font-size:13px;" href="/Login/Login/">Login</a></li>
+                    }
                 </ul>
             </div>
         </div>

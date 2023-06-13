@@ -1,0 +1,10 @@
+﻿@using EntityLayer.Entities
+@model Blog
+
+<h4>Most Popular Blog</h4>
+<ul class="recent_post">
+    <li>
+        <i class="icon-calendar-empty"></i> @Model.BlogCreatedDate.ToString("dd MMM yyyy")
+        <div><a href="/Default/Details/@Model.BlogID">@Model.BlogTitle</a></div>
+    </li>
+</ul>

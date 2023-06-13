@@ -20,7 +20,6 @@
         <div class="col-lg-9 pe-lg-5">
             @if (Model != null && Model.Count > 0)
             {
-
                 @foreach (var item in Model)
                 {
                     <div class="post">
@@ -37,7 +36,7 @@
                         </div>
                         <h2>@item.BlogTitle</h2>
                         <p>
-                            @item.BlogContent
+                            @Html.Raw(item.BlogContent.Length > 230 ? item.BlogContent.Substring(0, 230).Substring(0, item.BlogContent.Substring(0, 230).LastIndexOf(" ")) : item.BlogContent)
                         </p>
                         <a href="/Default/Details/@item.BlogID" class="btn_1">Read more</a>
                     </div>
@@ -106,13 +105,18 @@
                         </form>
                     </div>
                 </div>
-                <hr>
-                <div class="widget">
-                    @await Component.InvokeAsync("CategoryListComponent")
-                </div>
             </div>
-            <div class="widget">
+
+            <div class="box_style_1">
+                @await Component.InvokeAsync("CategoryListComponent")
+            </div>
+
+            <div class="box_style_1">
                 @await Component.InvokeAsync("Last3BlogComponent")
+            </div>
+
+            <div class="box_style_1">
+                @await Component.InvokeAsync("PopularBlogComponent")
             </div>
         </div>
     </div>

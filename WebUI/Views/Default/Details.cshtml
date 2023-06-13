@@ -24,7 +24,7 @@
                     </div>
                     <h2>@item.BlogTitle</h2>
                     <p>
-                        @item.BlogContent
+                        @Html.Raw(item.BlogContent)
                     </p>
                 </div>
                 @await Component.InvokeAsync("CommentListComponent", new {id=ViewBag.Id})
@@ -32,10 +32,20 @@
                 @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml")
             </div>
             <div class="col-lg-3">
-                @await Component.InvokeAsync("CategoryListComponent")
+                <div class="box_style_1">
+                    @await Component.InvokeAsync("CategoryListComponent")
+                </div>
+                <div class="box_style_1">
+                    @await Component.InvokeAsync("WriterLastBlogListComponent", new {id=item.AppUserId})
+                </div>
 
-                @await Component.InvokeAsync("WriterLastBlogListComponent", new {id=item.AppUserId})
-                <hr>
+                <div class="box_style_1">
+                    @await Component.InvokeAsync("Last3BlogComponent")
+                </div>
+
+                <div class="box_style_1">
+                    @await Component.InvokeAsync("PopularBlogComponent")
+                </div>
             </div>
         </div>
     </div>

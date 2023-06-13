@@ -23,7 +23,7 @@ namespace WebUI.Controllers
         [HttpPost]
         public IActionResult AddComment(Comment p, int id)
         {
-            p.CommentDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            p.CommentDate = Convert.ToDateTime(DateTime.Now.ToLongDateString());
             p.CommentStatus = true;
             p.CommentImg = "deneme";
             _commentService.TAdd(p);

@@ -26,7 +26,7 @@ namespace WebUI.Controllers
                     int pageSize = 3; // Sayfa başına görüntülenecek data sayısı
                     int pageNumber = (page ?? 1); // Sayfa numarası, varsayılan olarak 1
 
-                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(p => p.BlogStatus == true);
+                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(p => p.BlogStatus == true).OrderByDescending(o => o.BlogID);
                     var pagedResult = query.ToPagedList(pageNumber, pageSize);
 
                     return View(pagedResult);
@@ -36,7 +36,7 @@ namespace WebUI.Controllers
                     int pageSize = 3; // Sayfa başına görüntülenecek data sayısı
                     int pageNumber = (page ?? 1); // Sayfa numarası, varsayılan olarak 1
 
-                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(b => b.BlogTitle.Contains(searchQuery));
+                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(b => b.BlogStatus == true && b.BlogTitle.Contains(searchQuery)).OrderByDescending(o => o.BlogID);
                     var pagedResult = query.ToPagedList(pageNumber, pageSize);
 
                     return View(pagedResult);
@@ -53,7 +53,7 @@ namespace WebUI.Controllers
                     int pageSize = 3; // Sayfa başına görüntülenecek data sayısı
                     int pageNumber = (page ?? 1);
 
-                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(x => x.CategoryID == id && x.BlogStatus == true);
+                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(x => x.CategoryID == id && x.BlogStatus == true).OrderByDescending(o => o.BlogID);
                     var pagedResult = query.ToPagedList(pageNumber, pageSize);
                     return View(pagedResult);
                 }
@@ -62,7 +62,7 @@ namespace WebUI.Controllers
                     int pageSize = 3; // Sayfa başına görüntülenecek data sayısı
                     int pageNumber = (page ?? 1); // Sayfa numarası, varsayılan olarak 1
 
-                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(b => b.BlogTitle.Contains(searchQuery));
+                    var query = c.Blogs.Include(x => x.Category).Include(y => y.Comments).Include(z => z.AppUser).Where(b => b.CategoryID == id && b.BlogStatus == true && b.BlogTitle.Contains(searchQuery)).OrderByDescending(o => o.BlogID);
                     var pagedResult = query.ToPagedList(pageNumber, pageSize);
 
                     return View(pagedResult);

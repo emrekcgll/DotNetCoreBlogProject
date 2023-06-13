@@ -20,28 +20,31 @@
 else
 {
     <div class="container-xxl flex-grow-1 container-p-y">
-        <div class="row">
-            <table class="table">
-                <tr>
-                    <th>#</th>
-                    <th>Blog Adı</th>
-                    <th>Kategori</th>
-                    <th></th>
-                </tr>
-                @foreach (var item in Model)
-                {
-                    count++;
+        <div class="card">
+            <h5 class="card-header">Pending Approval Blog List</h5>
+            <div class="table-responsive text-nowrap">
+                <table class="table">
                     <tr>
-                        <td>@count</td>
-                        <td>@item.BlogTitle</td>
-                        <td>@item.Category.CategoryName</td>
-                        <td>
-                            <a href="/Admin/Dashboard/DeleteBlog/@item.BlogID/" class="btn btn-outline-danger">Sil</a>
-                            <a href="/Admin/Dashboard/UpdateBlog/@item.BlogID/" class="btn btn-outline-info">Düzenle</a>
-                        </td>
+                        <th>#</th>
+                        <th>Blog Adı</th>
+                        <th>Kategori</th>
+                        <th></th>
                     </tr>
-                }
-            </table>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.BlogTitle</td>
+                            <td>@item.Category.CategoryName</td>
+                            <td>
+                                <a href="/Admin/Dashboard/DeleteBlog/@item.BlogID/" class="btn btn-outline-danger">Sil</a>
+                                <a href="/Admin/Dashboard/UpdateBlog/@item.BlogID/" class="btn btn-outline-info">Düzenle</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
         </div>
     </div>
 }

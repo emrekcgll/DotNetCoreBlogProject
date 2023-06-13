@@ -1,15 +1,13 @@
 ﻿@using EntityLayer.Entities
 @model List<Blog>
 
-<div class="widget">
-    <h4>Writers Last 3 Post</h4>
-    <ul class="recent_post">
-        @foreach (var item in Model)
-        {
-            <li>
-                <i class="icon-calendar-empty"></i> @item.BlogCreatedDate.ToString("dd/MM/yyyy")
-                <div><a href="/Default/Details/@item.BlogID">@item.BlogTitle</a></div>
-            </li>
-        }
-    </ul>
-</div>
+<h4>Writers Last 3 Post</h4>
+<ul class="recent_post">
+    @foreach (var item in Model)
+    {
+        <li>
+            <i class="icon-calendar-empty"></i> @item.BlogCreatedDate.ToString("dd/MM/yyyy")
+            <div><a href="/Default/Details/@item.BlogID">@item.BlogTitle</a></div>
+        </li>
+    }
+</ul>

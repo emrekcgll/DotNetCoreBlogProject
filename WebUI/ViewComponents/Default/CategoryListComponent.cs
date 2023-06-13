@@ -1,9 +1,10 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.ViewComponents.Default
 {
-    public class CategoryListComponent:ViewComponent
+    public class CategoryListComponent : ViewComponent
     {
         private readonly ICategoryService _categoryService;
 
@@ -14,8 +15,11 @@ namespace WebUI.ViewComponents.Default
 
         public IViewComponentResult Invoke()
         {
-            var values = _categoryService.TGetList();
-            return View(values);
+            using (var c = new Context())
+            {
+                var values = c.Categories.Where(x => x.CategoryStatus == true).ToList();
+                return View(values);
+            }
         }
     }
 }

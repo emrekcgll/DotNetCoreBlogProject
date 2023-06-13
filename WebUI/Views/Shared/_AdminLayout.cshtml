@@ -91,36 +91,36 @@
                     <li class="menu-header small text-uppercase"><span class="menu-header-text">Bloglar</span></li>
                     <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "AddBlog") {<text>active</text>}">
                         <a href="/Admin/Dashboard/AddBlog/" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-collection"></i>
+                            <i class="menu-icon tf-icons bx bx-detail"></i>
                             <div data-i18n="Basic">Yeni Blog</div>
                         </a>
                     </li>
                     <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "BlogList") {<text>active</text>}">
                         <a href="/Admin/Dashboard/BlogList/" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-collection"></i>
+                            <i class="menu-icon tf-icons bx bx-detail"></i>
                             <div data-i18n="Basic">Blog Listesi</div>
                         </a>
                     </li>
-                    @if(User.IsInRole("Admin"))
+                    @if (User.IsInRole("Admin"))
                     {
                         <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "OnayBekleyenBloglar") {<text>active</text>}">
                             <a href="/Admin/Dashboard/PendingApprovalBlogList/" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-collection"></i>
+                                <i class="menu-icon tf-icons bx bx-detail"></i>
                                 <div data-i18n="Basic">Bekleyen Bloglar</div>
                                 <span id="pending-blog-count" class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20"></span>
-                            </a>
+                             </a>
                         </li>
                         <li class="menu-header small text-uppercase"><span class="menu-header-text">Kategoriler</span></li>
                         <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "CategoryList") {<text>active</text>}">
                             <a href="/Admin/Dashboard/CategoryList/" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-collection"></i>
+                                <i class="menu-icon tf-icons bx bx-box"></i>
                                 <div data-i18n="Basic">Kategori Listesi</div>
                                 <span id="pending-blog-count" class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20"></span>
                             </a>
                         </li>
                         <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "NewCategory") {<text>active</text>}">
                             <a href="/Admin/Dashboard/AddCategory/" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-collection"></i>
+                                <i class="menu-icon tf-icons bx bx-box"></i>
                                 <div data-i18n="Basic">Yeni Kategori</div>
                                 <span id="pending-blog-count" class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20"></span>
                             </a>
@@ -128,14 +128,14 @@
                         <li class="menu-header small text-uppercase"><span class="menu-header-text">Üye İşlemleri</span></li>
                         <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "UserList") {<text>active</text>}">
                             <a href="/Admin/Dashboard/UserList/" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-collection"></i>
+                                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
                                 <div data-i18n="Basic">Üye Listesi</div>
                                 <span id="pending-blog-count" class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20"></span>
                             </a>
                         </li>
                         <li class="menu-item @if(ViewData["ActivePage"] != null && ViewData["ActivePage"].ToString() == "LockedUser") {<text>active</text>}">
                             <a href="/Admin/Dashboard/LockedUser/" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-collection"></i>
+                                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
                                 <div data-i18n="Basic">Bloke Olmuş Üyeler</div>
                                 <span id="pending-blog-count" class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20"></span>
                             </a>
@@ -147,7 +147,13 @@
                             <i class="menu-icon tf-icons bx bx-collection"></i>
                             <div data-i18n="Basic">Canlı Mesajlaşma</div>
                         </a>
-                    </li>    
+                    </li>
+                    <li class="menu-item">
+                        <a href="/Default/Index/" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                            <div data-i18n="Basic">Site</div>
+                        </a>
+                    </li>
                 </ul>
             </aside>
             <div class="layout-page">
@@ -207,7 +213,7 @@
                 type: "GET",
                 url: "/Admin/Dashboard/GetPendingBlogCount/",
                 success: function (result) {
-                    if(result!==0) {
+                    if (result !== 0) {
                         $("#pending-blog-count").text(result);
                         $("#pending-blog-count").show();
                     }
@@ -217,6 +223,10 @@
                 }
             });
         });
+    </script>
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("editor")
     </script>
     <script src="~/sneat-1.0.0/assets/vendor/libs/popper/popper.js"></script>
     <script src="~/sneat-1.0.0/assets/vendor/js/bootstrap.js"></script>
